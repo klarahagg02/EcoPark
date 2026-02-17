@@ -9,11 +9,9 @@ namespace EcoPark.Birds
 {
     class Bird : Animal
     {
-        //wingspan
-        //sjö/landfågel
-        //antal gånger de häckar
-        //antal ägg per runda
-        //canfly
+        private int wingspan;
+        private bool canFly;
+
         public override string ToString()
         {
             return base.ToString() + $"write things here";

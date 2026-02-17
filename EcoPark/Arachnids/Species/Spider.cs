@@ -8,7 +8,13 @@ namespace EcoPark.Arachnids.Species
 {
     class Spider : Arachnid
     {
-        //array webtype eller bool produceWeb
+        private bool produceWeb;
+
+        public bool ProduceWeb
+        {
+            get { return produceWeb; }
+            set { produceWeb = value; }
+        }
 
         public override string ToString()
         {

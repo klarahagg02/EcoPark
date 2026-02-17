@@ -8,7 +8,12 @@ namespace EcoPark.Insects.Species
 {
     class Bee : Insect
     {
-        //typeOfBee (arbetare, drottning osv)
+        private readonly string[] typeOfBee = { "honey bee", "carpenter bee", "queen"};
+
+        //check if this is correct
+        public string TypeOfBee { get; set; }
+
+
         public override string ToString()
         {
             return base.ToString() + $"write things here";

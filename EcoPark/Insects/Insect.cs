@@ -9,9 +9,9 @@ namespace EcoPark.Insects
 {
     class Insect : Animal
     {
-        //bool canFly
-        //färg
-        //samhälle / lever ensam solitär
+        private bool canFly;
+        private string color;
+
         public override string ToString()
         {
             return base.ToString() + $"write things here";

@@ -8,8 +8,19 @@ namespace EcoPark.Mammals.Species
 {
     class Dog : Mammal
     {
-        //Breed
-        //isTrained
+        private string breed;
+        private bool isTrained;
+
+        public string Breed
+        {
+            get { return breed; }
+            set { breed = value; }
+        }
+        public bool IsTrained
+        {
+            get { return isTrained; }
+            set { isTrained = value; }
+        }
 
         public override string ToString()
         {

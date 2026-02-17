@@ -8,7 +8,14 @@ namespace EcoPark.Insects.Species
 {
     class Ladybug : Insect
     {
-        //NumOfDots
+        private int numOfDots;
+
+        public int NumOfDots
+        {
+            get { return numOfDots; }
+            set { numOfDots = value; }
+        }
+
         public override string ToString()
         {
             return base.ToString() + $"write things here";

@@ -8,8 +8,13 @@ namespace EcoPark.Mammals.Species
 {
     class Cat : Mammal
     {
-        //ute/innekatt
-        //allergivänlig
+        private bool allergyFriendly;
+
+        public bool AllergyFriendly
+        {
+            get { return allergyFriendly; }
+            set { allergyFriendly = value; }
+        }
 
         public override string ToString()
         {

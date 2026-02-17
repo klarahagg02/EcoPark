@@ -8,8 +8,14 @@ namespace EcoPark.Reptiles.Species
 {
     class Snake : Reptile
     {
-        //venomous
-        //wayOfKilling
+        private bool isVenomous;
+
+        public bool IsVenomous
+        {
+            get { return isVenomous; }
+            set { isVenomous = value; }
+        }
+
 
         public override string ToString()
         {

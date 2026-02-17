@@ -10,8 +10,9 @@ namespace EcoPark.Mammals
 {
     class Mammal : Animal
     {
-        //antalben
-        //
+        private int numOfLegs;
+        private int tailLength;
+        
         public override string ToString()
         {
             return base.ToString() + $"write things here";

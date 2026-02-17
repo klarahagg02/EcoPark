@@ -8,9 +8,14 @@ namespace EcoPark.Marine.Species
 {
     class Shark : Marine
     {
-        //isDangerous
-        //carnivore/not
-        //
+        private bool carnivore;
+
+        public bool Carnivore
+        {
+            get { return carnivore; }
+            set { carnivore = value; }
+        }
+
         public override string ToString()
         {
             return base.ToString() + $"write things here";

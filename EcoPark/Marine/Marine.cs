@@ -9,9 +9,9 @@ namespace EcoPark.Marine
 {
     class Marine : Animal
     {
-        //bool rovfisk
-        //int levnadsdjup meter
-        //color
+        private bool isPredator;
+        private int livingDepth; //in meters
+        private string color;
 
         public override string ToString()
         {

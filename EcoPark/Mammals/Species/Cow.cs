@@ -8,7 +8,13 @@ namespace EcoPark.Mammals.Species
 {
     class Cow : Mammal
     {
-        //milkProduction
+        private int milkProduction;
+
+        public int MilkProduction
+        {
+            get { return milkProduction; }
+            set { milkProduction = value; }
+        }
 
         public override string ToString()
         {

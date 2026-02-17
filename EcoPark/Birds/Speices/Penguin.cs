@@ -8,8 +8,14 @@ namespace EcoPark.Birds.Speices
 {
     class Penguin : Bird
     {
-        //climatePreferred
-        //
+        private string habitat; //tropical, arctic etc
+
+        public string Habitat
+        {
+            get { return habitat; }
+            set { habitat = value; }
+        }
+
         public override string ToString()
         {
             return base.ToString() + $"write things here";

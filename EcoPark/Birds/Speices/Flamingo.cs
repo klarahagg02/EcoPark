@@ -8,7 +8,9 @@ namespace EcoPark.Birds.Speices
 {
     class Flamingo : Bird
     {
-        //
+        private readonly string[] colorIntensity = { "light pink", "medium pink", "dark pink" };
+
+        public string ColorIntensity { get; set; }
 
         public override string ToString()
         {

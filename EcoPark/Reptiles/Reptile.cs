@@ -9,10 +9,8 @@ namespace EcoPark.Reptiles
 {
     class Reptile : Animal
     {
-        //int numOfLegs
-        //bodyLength
-        //int numOfEggsLaid
-        //aggressivenessLevel
+        private int bodyLength; //in cm
+        private readonly string[] aggressivenessLevel = { "Low", "Medium", "High" };
 
         public override string ToString()
         {

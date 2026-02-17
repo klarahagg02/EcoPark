@@ -9,8 +9,9 @@ namespace EcoPark.Arachnids
 {
     class Arachnid : Animal
     {
-        //poisonus
-        //numOfEyes
+        private int numOfEyes;
+        private bool isPoisonous;
+
         public override string ToString()
         {
             return base.ToString() + $"write things here";

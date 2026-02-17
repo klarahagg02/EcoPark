@@ -8,7 +8,13 @@ namespace EcoPark.Birds.Speices
 {
     class Pelican : Bird
     {
+        private double beakLength;
 
+        public double BeakLength
+        {
+            get { return beakLength; }
+            set { beakLength = value; }
+        }
 
         public override string ToString()
         {
