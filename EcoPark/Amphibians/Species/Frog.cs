@@ -10,14 +10,7 @@ namespace EcoPark.Amphibians.Species
     public class Frog : Amphibian
     {
         //have both instance variables and properties here!
-        private string color;
         private bool isPoisonous;
-
-        public string Color
-        {
-            get { return color; }
-            set { color = value; }
-        }
 
         public bool IsPoisonous { get; set; }
 

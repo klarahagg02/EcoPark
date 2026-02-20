@@ -10,10 +10,7 @@ namespace EcoPark.AnimalsGen
     //abstract class - cannot be instantiated, only inherited from. this is the parent class
     public abstract class Animal
     {
-        //this class should ONLY have the default constructor:
-        //Animal()
-        //{
-        //}
+        //this class should ONLY have the default constructor
 
         //instance variables - data that all objects will have IN them.
         //these are the "attributes" of the animals where the data is stored

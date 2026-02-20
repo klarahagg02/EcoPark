@@ -11,7 +11,7 @@ namespace EcoPark.Amphibians
     public class Amphibian : Animal
     {
         private bool livesInWater;
-        private string habitat;
+        private string color;
 
 
         public override string ToString()

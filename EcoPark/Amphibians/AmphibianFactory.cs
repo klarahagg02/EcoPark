@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace EcoPark.Amphibians
 {
-    class AmphibianFactory
+    public class AmphibianFactory
     {
+
+       /* public static Amphibian CreateAmphibian(bool livesInWater, string habitat)
+        {
+            Amphibian amphibian = null;
+
+            switch (species)
+            {
+                case 
+            }
+            
+        }*/
+
     }
 }
