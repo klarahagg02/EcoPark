@@ -110,6 +110,18 @@ public partial class MainWindow : Window
                 case CategoryType.Amphibian:
                     FillListOfSpecies<Amphibians.AmphibianSpecies>();
                     break;
+                case CategoryType.Bird:
+                    FillListOfSpecies<Birds.BirdSpecies>();
+                    break;
+                case CategoryType.Marine:
+                    FillListOfSpecies<Marine.MarineSpecies>();
+                    break;
+                case CategoryType.Insect:
+                    FillListOfSpecies<Insects.InsectSpecies>();
+                    break;
+                case CategoryType.Reptile:
+                    FillListOfSpecies<Reptiles.ReptileSpecies>();
+                    break;
             }
         }
     }

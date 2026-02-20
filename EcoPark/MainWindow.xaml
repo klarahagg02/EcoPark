@@ -10,7 +10,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="92,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="sv-se" Text="Create Animal" FontSize="25"/></TextBlock>
         <ListBox x:Name="lstCategories" HorizontalAlignment="Left" Height="147" Margin="52,82,0,0" VerticalAlignment="Top" Width="114" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="lstCategories_SelectionChanged"/>
         <TextBlock HorizontalAlignment="Left" Height="24" Margin="52,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114" FontWeight="Bold"><Run Language="sv-se" Text="Categories"/></TextBlock>
-        <ListBox x:Name="lstSpecies" HorizontalAlignment="Left" Height="111" Margin="182,82,0,0" VerticalAlignment="Top" Width="114" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="lstSpecies_SelectionChanged"/>
+        <ListBox x:Name="lstSpecies" HorizontalAlignment="Left" Height="111" Margin="182,82,0,0" VerticalAlignment="Top" Width="114" d:ItemsSource="{d:SampleData ItemCount=5}"/>
         <TextBlock HorizontalAlignment="Left" Height="24" Margin="182,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114" FontWeight="Bold"><Run Language="sv-se" Text="Species"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Height="16" Margin="66,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" FontWeight="Bold"><Run Language="sv-se" Text="General Data"/><LineBreak/><Run Language="sv-se"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Height="18" Margin="89,308,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="44"><Run Language="sv-se" Text="Name"/></TextBlock>
