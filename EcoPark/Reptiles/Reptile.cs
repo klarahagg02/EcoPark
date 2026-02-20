@@ -10,8 +10,7 @@ namespace EcoPark.Reptiles
     class Reptile : Animal
     {
         private int bodyLength; //in cm
-        private readonly string[] aggressivenessLevel = { "Low", "Medium", "High" };
-
+        private bool livesInWater;
         public override string ToString()
         {
             return base.ToString() + $"write things here";

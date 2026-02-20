@@ -1,0 +1,18 @@
+﻿<Window x:Class="EcoPark.View.AmphibianView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EcoPark.View"
+        mc:Ignorable="d"
+        Title="AmphibianView" Height="450" Width="450">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Height="24" Margin="33,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" FontWeight="Bold"><Run Language="sv-se" Text="Amphibian General Data"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="19" Margin="64,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="41"><Run Language="sv-se" Text="Color"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="23" Margin="64,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="72"><Run Language="sv-se" Text="Lives in water"/></TextBlock>
+        <TextBox x:Name="txtColor" HorizontalAlignment="Left" Height="19" Margin="110,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="79"/>
+        <RadioButton x:Name="radioBtnYes" Content="Yes" HorizontalAlignment="Left" Height="20" Margin="150,97,0,0" VerticalAlignment="Top" Width="39"/>
+        <RadioButton x:Name="radioBtnNo" Content="No" HorizontalAlignment="Left" Height="20" Margin="200,97,0,0" VerticalAlignment="Top" Width="46"/>
+
+    </Grid>
+</Window>

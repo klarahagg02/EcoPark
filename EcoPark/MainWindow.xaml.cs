@@ -21,17 +21,9 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
+        //fill listbox with categories from the enum CategoryType
         InitializeCategoryLstBox();
-        //fyll comboboxarna med listor på djur som default
     }
-
-    //fill combobox with categoryType enum
-
-    //fill other combobox with speciesType enum
-    //based on what category is selected
-
-    //?
-    Window view = null;
 
     private void ReadGenAnimalData()
     {
@@ -121,6 +113,9 @@ public partial class MainWindow : Window
                     break;
                 case CategoryType.Reptile:
                     FillListOfSpecies<Reptiles.ReptileSpecies>();
+                    break;
+                case CategoryType.Arachnid:
+                    FillListOfSpecies<Arachnids.ArachnidSpecies>();
                     break;
             }
         }

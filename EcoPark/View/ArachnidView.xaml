@@ -1,0 +1,19 @@
+﻿<Window x:Class="EcoPark.View.ArachnidView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EcoPark.View"
+        mc:Ignorable="d"
+        Title="ArachnidView" Height="450" Width="450
+        ">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Height="18" Margin="69,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" ><Run Language="sv-se" Text="Number of eyes"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="21" Margin="69,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="91"><Run Language="sv-se" Text="Is it poisonous?"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="17" Margin="35,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" FontWeight="Bold"><Run Language="sv-se" Text="General Arachnid Data"/></TextBlock>
+        <TextBox x:Name="txtNumOfEyes" HorizontalAlignment="Left" Height="18" Margin="174,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="41"/>
+        <RadioButton x:Name="radioBtnYes" Content="Yes" HorizontalAlignment="Left" Height="21" Margin="174,89,0,0" VerticalAlignment="Top" Width="41"/>
+        <RadioButton x:Name="radioBtnNo" Content="No" HorizontalAlignment="Left" Height="21" Margin="225,90,0,0" VerticalAlignment="Top" Width="40"/>
+
+    </Grid>
+</Window>

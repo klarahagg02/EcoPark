@@ -1,0 +1,18 @@
+﻿<Window x:Class="EcoPark.View.InsectView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EcoPark.View"
+        mc:Ignorable="d"
+        Title="InsectView" Height="450" Width="450">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Height="28" Margin="34,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="113" FontWeight="Bold"><Run Language="sv-se" Text="General Insect Data"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="22" Margin="57,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38"><Run Language="sv-se" Text="Color"/></TextBlock>
+        <TextBox x:Name="txtColor" HorizontalAlignment="Left" Height="17" Margin="95,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78"/>
+        <TextBlock HorizontalAlignment="Left" Height="19" Margin="57,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="47"><Run Language="sv-se" Text="Can fly?"/></TextBlock>
+        <RadioButton x:Name="radioBtnYes" Content="Yes" HorizontalAlignment="Left" Height="19" Margin="109,84,0,0" VerticalAlignment="Top" Width="38"/>
+        <RadioButton x:Name="radioBtnNo" Content="No" HorizontalAlignment="Left" Height="19" Margin="173,84,0,0" VerticalAlignment="Top" Width="52"/>
+
+    </Grid>
+</Window>

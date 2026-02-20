@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EcoPark.View"
         mc:Ignorable="d"
-        Title="MammalView" Height="450" Width="800">
+        Title="MammalView" Height="450" Width="450">
     <Grid>
-        
+        <TextBlock HorizontalAlignment="Left" Height="21" Margin="22,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" FontWeight="Bold"><Run Language="sv-se" Text="General Mammal Data"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="22" Margin="47,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95"><Run Language="sv-se" Text="Number of legs"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="42" Margin="47,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95"><Run Text="Tail length "/><LineBreak/><Run Text="(if no tail"/><Run Language="sv-se" Text=","/><Run Text=" write 0)"/></TextBlock>
+        <TextBox x:Name="txtNumOfLegs" HorizontalAlignment="Left" Height="22" Margin="147,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42"/>
+        <TextBox x:Name="txtTailLength" HorizontalAlignment="Left" Height="21" Margin="147,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42"/>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="194,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="23"><Run Language="sv-se" Text="cm"/></TextBlock>
+
     </Grid>
 </Window>
