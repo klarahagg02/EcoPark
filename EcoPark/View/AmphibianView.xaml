@@ -13,6 +13,9 @@
         <TextBox x:Name="txtColor" HorizontalAlignment="Left" Height="19" Margin="110,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="79"/>
         <RadioButton x:Name="radioBtnYes" Content="Yes" HorizontalAlignment="Left" Height="20" Margin="150,97,0,0" VerticalAlignment="Top" Width="39"/>
         <RadioButton x:Name="radioBtnNo" Content="No" HorizontalAlignment="Left" Height="20" Margin="200,97,0,0" VerticalAlignment="Top" Width="46"/>
+        <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" Height="33" Margin="136,235,0,0" VerticalAlignment="Top" Width="66" Click="btnOK_Click"/>
+        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Height="33" Margin="225,235,0,0" VerticalAlignment="Top" Width="67" Click="btnCancel_Click"/>
+        <TextBlock x:Name="txtSpecificSpecies" HorizontalAlignment="Left" Height="24" Margin="33,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137"/>
 
     </Grid>
 </Window>

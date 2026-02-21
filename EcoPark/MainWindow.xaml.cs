@@ -47,25 +47,32 @@ public partial class MainWindow : Window
         switch (lstCategories.SelectedItem.ToString())
         {
             case "Mammal":
-                //mammalView.Show();
+                MammalView mammalView = new MammalView();
+                mammalView.Show();
                 break;
             case "Amphibian":
-                //amphibianView.Show();
+                AmphibianView amphibianView = new AmphibianView();
+                amphibianView.Show();
                 break;
             case "Bird":
-                //birdView.Show();
+                BirdView birdView = new BirdView();
+                birdView.Show();
                 break;
             case "Marine":
-                //marineView.Show();
+                MarineView marineView = new MarineView();
+                marineView.Show();
                 break;
             case "Insect":
-                //insectView.Show();
+                InsectView insectView = new InsectView();
+                insectView.Show();
                 break;
             case "Reptile":
-                //reptileView.Show();
+                ReptileView reptileView = new ReptileView();
+                reptileView.Show();
                 break;
             case "Arachnid":
-                //arachnidView.Show();
+                ArachnidView arachnidView = new ArachnidView();
+                arachnidView.Show();
                 break;
         }
     }
@@ -89,7 +96,14 @@ public partial class MainWindow : Window
     {
         //To start off with the list being empty
         lstSpecies.Items.Clear();
+        //call method to fill the species list with the correct species based on the chosen category
+        FillRightSpeciesList();
+    }
 
+
+    //help-method to fill the species list based on chosen category
+    private void FillRightSpeciesList()
+    {
         if (lstCategories.SelectedItem is CategoryType selectedCategory)
         {
             //do a switch case for each category and fill the species list

@@ -11,16 +11,16 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using EcoPark.Arachnids;
+using EcoPark.Marine;
 
 namespace EcoPark.View
 {
     /// <summary>
-    /// Interaction logic for ArachnidView.xaml
+    /// Interaction logic for MarineView.xaml
     /// </summary>
-    public partial class ArachnidView : Window
+    public partial class MarineView : Window
     {
-        public ArachnidView()
+        public MarineView()
         {
             InitializeComponent();
         }

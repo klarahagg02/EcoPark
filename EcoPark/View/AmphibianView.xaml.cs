@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EcoPark.Amphibians;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,31 @@ namespace EcoPark.View
     /// </summary>
     public partial class AmphibianView : Window
     {
+
         public AmphibianView()
         {
             InitializeComponent();
+        }
+
+        //string color = txtColor.Text;
+
+        private void btnOK_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ShowSpecies()
+        {
+            txtSpecificSpecies.Text = $"Specific Data for {MainWindow.species.ToString()}";
+
+            switch ((AmphibianSpecies)species)
+            {
+                case Amphibians.Frog
+            }
         }
     }
 }
