@@ -1,4 +1,5 @@
 ﻿using EcoPark.AnimalsGen;
+using EcoPark.Mammals;
 using EcoPark.View;
 using System.Text;
 using System.Windows;
@@ -18,6 +19,8 @@ namespace EcoPark;
 /// </summary>
 public partial class MainWindow : Window
 {
+    
+    
     public MainWindow()
     {
         InitializeComponent();
@@ -29,15 +32,17 @@ public partial class MainWindow : Window
     {
         //how do i reach them from the instance vaiables in Animal?
         //Id?
-        //Name = txtName.Text;
+       // Name = txtName.Text;
         //Age = int.Parse(txtAge.Text);
-        //Gender = cboSelectGender.SelectedItem.ToString();
-        //Weight = int.Parse(txtWeight.Text);
+       // Gender = cboSelectGender.SelectedItem.ToString();
+       // Weight = int.Parse(txtWeight.Text);
     }
 
+    //when Add is clicked in the general data section, read the data and save it in the instance variables in the Animal class
     private void btnAddGenData_Click(object sender, RoutedEventArgs e)
     {
-
+        ReadGenAnimalData();
+        //ReadSpeciesSpecificData(); ???
     }
 
     private void btnCreateAnimal_Click(object sender, RoutedEventArgs e)
@@ -47,8 +52,11 @@ public partial class MainWindow : Window
         switch (lstCategories.SelectedItem.ToString())
         {
             case "Mammal":
-                MammalView mammalView = new MammalView();
-                mammalView.Show();
+                if (lstSpecies.SelectedItem is MammalSpecies selectedMammal)
+                {
+                    MammalView mammalView = new MammalView((int)(MammalSpecies)lstSpecies.SelectedItem);
+                    mammalView.Show();
+                }
                 break;
             case "Amphibian":
                 AmphibianView amphibianView = new AmphibianView();

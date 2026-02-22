@@ -13,11 +13,7 @@ namespace EcoPark.Marine
         private int livingDepth; //in meters
         private string color;
 
-        public bool IsPredator 
-        { 
-            get {  return isPredator; }
-            set { isPredator = value; }
-        }
+
 
         public int LivingDepth
         {
@@ -33,8 +29,7 @@ namespace EcoPark.Marine
 
         public override string ToString()
         {
-            string isPredator = IsPredator ? $"Yes" : "No";
-            return $"{base.ToString()}\nIs predator = {isPredator}\nLiving deph = {LivingDepth} meters\nColor = {Color}\n";
+            return $"{base.ToString()}\nLiving deph = {LivingDepth} meters\nColor = {Color}\n";
         }
     }
 }

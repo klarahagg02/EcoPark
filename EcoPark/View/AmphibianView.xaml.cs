@@ -37,6 +37,7 @@ namespace EcoPark.View
 
         }
 
+        /*
         private void ShowSpecies()
         {
             txtSpecificSpecies.Text = $"Specific Data for {MainWindow.species.ToString()}";
@@ -45,6 +46,6 @@ namespace EcoPark.View
             {
                 case Amphibians.Frog
             }
-        }
+        }*/
     }
 }

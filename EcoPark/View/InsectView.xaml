@@ -5,14 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EcoPark.View"
         mc:Ignorable="d"
-        Title="InsectView" Height="450" Width="450">
+        Title="InsectView" Height="400" Width="350">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Height="28" Margin="34,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="113" FontWeight="Bold"><Run Language="sv-se" Text="General Insect Data"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="22" Margin="57,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38"><Run Language="sv-se" Text="Color"/></TextBlock>
-        <TextBox x:Name="txtColor" HorizontalAlignment="Left" Height="17" Margin="95,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78"/>
-        <TextBlock HorizontalAlignment="Left" Height="19" Margin="57,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="47"><Run Language="sv-se" Text="Can fly?"/></TextBlock>
-        <RadioButton x:Name="radioBtnYes" Content="Yes" HorizontalAlignment="Left" Height="19" Margin="109,84,0,0" VerticalAlignment="Top" Width="38"/>
-        <RadioButton x:Name="radioBtnNo" Content="No" HorizontalAlignment="Left" Height="19" Margin="173,84,0,0" VerticalAlignment="Top" Width="52"/>
+        <Rectangle HorizontalAlignment="Center" Height="115" Margin="0,208,0,0" Stroke="Black" VerticalAlignment="Top" Width="306"/>
+        <Rectangle HorizontalAlignment="Center" Height="156" Margin="0,36,0,0" Stroke="Black" VerticalAlignment="Top" Width="306"/>
+        <TextBlock HorizontalAlignment="Left" Height="28" Margin="41,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="113" FontWeight="Bold"><Run Language="sv-se" Text="General Insect Data"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="22" Margin="72,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38"><Run Language="sv-se" Text="Color"/></TextBlock>
+        <TextBox x:Name="txtColor" HorizontalAlignment="Left" Height="17" Margin="115,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78"/>
+        <TextBlock HorizontalAlignment="Left" Height="19" Margin="72,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="47"><Run Language="sv-se" Text="Can fly?"/></TextBlock>
+        <RadioButton x:Name="radioBtnYes" Content="Yes" HorizontalAlignment="Left" Height="19" Margin="124,123,0,0" VerticalAlignment="Top" Width="38" RenderTransformOrigin="0.193,-0.356"/>
+        <RadioButton x:Name="radioBtnNo" Content="No" HorizontalAlignment="Left" Height="19" Margin="175,123,0,0" VerticalAlignment="Top" Width="52"/>
+        <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" Height="33" Margin="84,336,0,0" VerticalAlignment="Top" Width="66" Click="btnOK_Click" Background="#FF56B32D" FontWeight="Bold"/>
+        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Height="33" Margin="182,336,0,0" VerticalAlignment="Top" Width="68" Click="btnCancel_Click" Background="#FFFF1B1B" FontWeight="Bold"/>
+        <TextBlock x:Name="txtSpecificSpecies" HorizontalAlignment="Left" Height="24" Margin="38,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171" FontWeight="Bold"><Run Language="sv-se" Text="x Specific Data"/></TextBlock>
+        <TextBlock x:Name="txtblock1" HorizontalAlignment="Left" Height="20" Margin="60,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="68"><Run Text="TextBlock"/><Run Language="sv-se" Text="1"/></TextBlock>
+        <TextBox x:Name="txtInputBlock1" HorizontalAlignment="Left" Height="20" Margin="140,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85"/>
+        <TextBlock x:Name="txtblock2" HorizontalAlignment="Left" Height="18" Margin="60,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80"><Run Text="TextBlock"/><Run Language="sv-se" Text="2"/></TextBlock>
+        <CheckBox x:Name="checkbox" Content="Yes" HorizontalAlignment="Left" Height="18" Margin="140,285,0,0" VerticalAlignment="Top" Width="51"/>
 
     </Grid>
 </Window>

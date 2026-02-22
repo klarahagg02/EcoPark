@@ -5,15 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EcoPark.View"
         mc:Ignorable="d"
-        Title="BirdView" Height="450" Width="450">
+        Title="BirdView" Height="400" Width="350">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Height="25" Margin="30,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontWeight="Bold"><Run Language="sv-se" Text="General Bird Data"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="22" Margin="59,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56"><Run Language="sv-se" Text="Wingspan"/></TextBlock>
-        <TextBox x:Name="txtWingspan" HorizontalAlignment="Left" Height="22" Margin="130,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="49"/>
-        <TextBlock HorizontalAlignment="Left" Height="17" Margin="184,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="28"><Run Language="sv-se" Text="cm"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="18" Margin="59,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="47"><Run Language="sv-se" Text="Can fly?"/></TextBlock>
-        <RadioButton x:Name="radioBtnYes" Content="Yes" HorizontalAlignment="Left" Height="18" Margin="130,94,0,0" VerticalAlignment="Top" Width="40"/>
-        <RadioButton x:Name="radioBtnNo" Content="No" HorizontalAlignment="Left" Height="18" Margin="179,94,0,0" VerticalAlignment="Top" Width="46"/>
+        <Rectangle HorizontalAlignment="Center" Height="115" Margin="0,208,0,0" Stroke="Black" VerticalAlignment="Top" Width="306"/>
+        <Rectangle HorizontalAlignment="Center" Height="156" Margin="0,36,0,0" Stroke="Black" VerticalAlignment="Top" Width="306"/>
+        <TextBlock HorizontalAlignment="Left" Height="25" Margin="42,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontWeight="Bold"><Run Language="sv-se" Text="General Bird Data"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="22" Margin="71,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56" RenderTransformOrigin="0.556,1.725"><Run Language="sv-se" Text="Wingspan"/></TextBlock>
+        <TextBox x:Name="txtWingspan" HorizontalAlignment="Left" Height="22" Margin="134,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="49"/>
+        <TextBlock HorizontalAlignment="Left" Height="17" Margin="188,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="28"><Run Language="sv-se" Text="cm"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="18" Margin="71,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="46"><Run Language="sv-se" Text="Can fly?"/></TextBlock>
+        <RadioButton x:Name="radioBtnYes" Content="Yes" HorizontalAlignment="Left" Height="18" Margin="134,121,0,0" VerticalAlignment="Top" Width="40"/>
+        <RadioButton x:Name="radioBtnNo" Content="No" HorizontalAlignment="Left" Height="18" Margin="184,121,0,0" VerticalAlignment="Top" Width="46"/>
+        <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" Height="33" Margin="84,336,0,0" VerticalAlignment="Top" Width="66" Click="btnOK_Click" Background="#FF56B32D" FontWeight="Bold"/>
+        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Height="33" Margin="182,336,0,0" VerticalAlignment="Top" Width="68" Click="btnCancel_Click" Background="#FFFF1B1B" FontWeight="Bold"/>
+        <TextBlock x:Name="txtSpecificSpecies" HorizontalAlignment="Left" Height="24" Margin="38,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171" FontWeight="Bold"><Run Language="sv-se" Text="x Specific Data"/></TextBlock>
+        <TextBlock x:Name="txtblock1" HorizontalAlignment="Left" Height="20" Margin="60,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="68"><Run Text="TextBlock"/><Run Language="sv-se" Text="1"/></TextBlock>
+        <TextBox x:Name="txtInputBlock1" HorizontalAlignment="Left" Height="20" Margin="140,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85"/>
+        <TextBlock x:Name="txtblock2" HorizontalAlignment="Left" Height="18" Margin="60,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80"><Run Text="TextBlock"/><Run Language="sv-se" Text="2"/></TextBlock>
+        <CheckBox x:Name="checkbox" Content="Yes" HorizontalAlignment="Left" Height="18" Margin="140,285,0,0" VerticalAlignment="Top" Width="51"/>
 
     </Grid>
 </Window>
