@@ -35,9 +35,10 @@ namespace EcoPark.Mammals
         //call CreateMammal from MammalFactory to create
         //the mammal objects in the constructor of the species classes (Cat, Dog, Cow)
 
+        //ToString method that add on to the parent class ToString().
         public override string ToString()
         {
-            return base.ToString() + $"write things here";
+            return $"{base.ToString()}\nNumber of legs = {NumOfLegs}\nTail length = {TailLength}\n";
         }
     }
 }

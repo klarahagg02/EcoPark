@@ -26,9 +26,12 @@ namespace EcoPark.Mammals.Species
             set { allergyFriendly = value; }
         }
 
+        //check if allergyFriendly is right or if it should be the outher way round
         public override string ToString()
         {
-            return base.ToString() + $"write things here";
+            string allergyFriendly = AllergyFriendly ? $"Yes" : "No";
+            return $"{base.ToString()}\nAllergy friendly = {allergyFriendly}";
+
         }
     }
 }

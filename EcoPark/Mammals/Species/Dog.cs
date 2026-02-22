@@ -22,9 +22,11 @@ namespace EcoPark.Mammals.Species
             set { isTrained = value; }
         }
 
+        //double chek like cat
         public override string ToString()
         {
-            return base.ToString() + $"write things here";
+            string isTrained = IsTrained ? $"Yes" : "No";
+            return $"{base.ToString()}\nBreed = {Breed}\nIs trained = {isTrained}";
         }
     }
 }
