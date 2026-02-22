@@ -13,10 +13,10 @@ namespace EcoPark.Insects.Species
         //check if this is correct
         public string TypeOfBee { get; set; }
 
-
+        //not sure about bee-type
         public override string ToString()
         {
-            return base.ToString() + $"write things here";
+            return $"{base.ToString()}\nType of bee = {TypeOfBee}";
         }
     }
 }

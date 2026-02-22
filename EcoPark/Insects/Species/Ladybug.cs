@@ -18,7 +18,7 @@ namespace EcoPark.Insects.Species
 
         public override string ToString()
         {
-            return base.ToString() + $"write things here";
+            return $"{base.ToString()}\nNumber of dots = {NumOfDots}";
         }
     }
 }
