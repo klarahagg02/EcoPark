@@ -8,8 +8,19 @@ namespace EcoPark.Amphibians.Species
 {
     public class Axolotl : Amphibian
     {
+        private bool regrowLimbs;
 
-        //fint an attribute unique for axolotl soon!
+        public bool RegrowLimbs
+        {
+            get { return regrowLimbs; }
+            set { regrowLimbs = value; }
+        }
 
+        //check bool if its correct
+        public override string ToString()
+        {
+            string regrowLimbs = RegrowLimbs ? $"Yes" : "No";
+            return $"{base.ToString()}\nCan regrow limbs = {regrowLimbs}";
+        }
     }
 }

@@ -17,9 +17,11 @@ namespace EcoPark.Amphibians.Species
 
         //this method first calls parent class then grandpartent class to get ALL of the
         //things that should be included in the output 
+        //check if bool is correct
         public override string ToString()
         {
-            return base.ToString() + $"write things here";
+            string isPoisonous = IsPoisonous ? $"Yes" : "No";
+            return $"{base.ToString()}\nIs poisonous = {isPoisonous}";
         }
     }
 }

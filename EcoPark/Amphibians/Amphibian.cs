@@ -13,11 +13,23 @@ namespace EcoPark.Amphibians
         private bool livesInWater;
         private string color;
 
-
-        public override string ToString()
+        public bool LivesInWater
         {
-            return base.ToString() + $"write things here";
+            get { return livesInWater; }
+            set { livesInWater = value; }
         }
 
+        public string Color
+        {
+            get { return color; }
+            set { color = value; }
+        }
+
+        //check if bool is correct
+        public override string ToString()
+        {
+            string livesInWater = LivesInWater ? $"Yes" : "No";
+            return $"{base.ToString()}\nLives in water = {livesInWater}\nColor = {color}\n";
+        }
     }
 }
