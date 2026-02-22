@@ -12,9 +12,23 @@ namespace EcoPark.Arachnids
         private int numOfEyes;
         private bool isPoisonous;
 
+        public int NumOfEyes 
+        { 
+            get { return numOfEyes; } 
+            set { numOfEyes = value; }
+        }
+
+        public bool IsPoisonous
+        {
+            get { return isPoisonous; }
+            set { isPoisonous = value; }
+        }
+
+        //check if bool is correct
         public override string ToString()
         {
-            return base.ToString() + $"write things here";
+            string isPoisonous = IsPoisonous ? $"Yes" : "No";
+            return $"{base.ToString()}\nNumber of eyes = {NumOfEyes}\nIs poisonous = {isPoisonous}";
         }
     }
 }

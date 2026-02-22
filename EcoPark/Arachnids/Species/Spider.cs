@@ -16,9 +16,11 @@ namespace EcoPark.Arachnids.Species
             set { produceWeb = value; }
         }
 
+        //check if bool is correct
         public override string ToString()
         {
-            return base.ToString() + $"write things here";
+            string produceWeb = ProduceWeb ? $"Yes" : "No";
+            return $"{base.ToString()}\nProduce web = {produceWeb}";
         }
     }
 }
