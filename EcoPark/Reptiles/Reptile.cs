@@ -11,9 +11,23 @@ namespace EcoPark.Reptiles
     {
         private int bodyLength; //in cm
         private bool livesInWater;
+
+        public int BodyLength
+        {
+            get { return bodyLength; }
+            set { bodyLength = value; }
+        }
+        public bool LivesInWater
+        {
+            get { return livesInWater; }
+            set { livesInWater = value; }
+        }
+
+        //check if bool is correct
         public override string ToString()
         {
-            return base.ToString() + $"write things here";
+            string livesInWater = LivesInWater ? $"Yes" : "No";
+            return $"{base.ToString()}\nBody length = {BodyLength}\nLives in water = {livesInWater}";
         }
     }
 }

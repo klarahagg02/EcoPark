@@ -16,10 +16,11 @@ namespace EcoPark.Reptiles.Species
             set { isVenomous = value; }
         }
 
-
+        //check if bool is correct
         public override string ToString()
         {
-            return base.ToString() + $"write things here";
+            string isVenomous = IsVenomous ? $"Yes" : "No";
+            return $"{base.ToString()}\nVenomous = {isVenomous}";
         }
     }
 }

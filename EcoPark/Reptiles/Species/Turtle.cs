@@ -11,9 +11,15 @@ namespace EcoPark.Reptiles.Species
         //find an unique attrubute for turtle soon!
         private string shellColor;
 
+        public string ShellColor
+        {
+            get { return shellColor; }
+            set { shellColor = value; }
+        }
+
         public override string ToString()
         {
-            return base.ToString() + $"write things here";
+            return $"{base.ToString()}\nShell color = {ShellColor}";
         }
     }
 }
