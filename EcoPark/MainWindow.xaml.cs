@@ -1,5 +1,11 @@
-﻿using EcoPark.AnimalsGen;
+﻿using EcoPark.Amphibians;
+using EcoPark.AnimalsGen;
 using EcoPark.Mammals;
+using EcoPark.Birds;
+using EcoPark.Insects;
+using EcoPark.Reptiles;
+using EcoPark.Arachnids;
+using EcoPark.Marine;
 using EcoPark.View;
 using System.Text;
 using System.Windows;
@@ -48,7 +54,7 @@ public partial class MainWindow : Window
     private void btnCreateAnimal_Click(object sender, RoutedEventArgs e)
     {
         //write code that reads what item in the comboboxes that were
-        //selected and opens a NEW WINDOW with the correct animal category and species
+        //selected and opens a NEW WINDOW with the correct animal category and correct species textboxes
         switch (lstCategories.SelectedItem.ToString())
         {
             case "Mammal":
@@ -58,29 +64,53 @@ public partial class MainWindow : Window
                     mammalView.Show();
                 }
                 break;
+
             case "Amphibian":
-                AmphibianView amphibianView = new AmphibianView();
-                amphibianView.Show();
+                if (lstSpecies.SelectedItem is AmphibianSpecies selectedAmphibian)
+                {
+                    AmphibianView amphibianView = new AmphibianView((int)(AmphibianSpecies)lstSpecies.SelectedItem);
+                    amphibianView.Show();
+                }
                 break;
+
             case "Bird":
-                BirdView birdView = new BirdView();
-                birdView.Show();
+                if (lstSpecies.SelectedItem is BirdSpecies selectedBird)
+                {
+                    BirdView birdView = new BirdView((int)(BirdSpecies)lstSpecies.SelectedItem);
+                    birdView.Show();
+                }
                 break;
+
             case "Marine":
-                MarineView marineView = new MarineView();
-                marineView.Show();
+                if (lstSpecies.SelectedItem is MarineSpecies selectedMarine)
+                {
+                    MarineView marineView = new MarineView((int)(MarineSpecies)lstSpecies.SelectedItem);
+                    marineView.Show();
+                }
                 break;
+
             case "Insect":
-                InsectView insectView = new InsectView();
-                insectView.Show();
+                if (lstSpecies.SelectedItem is InsectSpecies selectedInsect)
+                {
+                    InsectView insectView = new InsectView((int)(InsectSpecies)lstSpecies.SelectedItem);
+                    insectView.Show();
+                }
                 break;
+
             case "Reptile":
-                ReptileView reptileView = new ReptileView();
-                reptileView.Show();
+                if (lstSpecies.SelectedItem is ReptileSpecies selectedReptile)
+                {
+                    ReptileView reptileView = new ReptileView((int)(ReptileSpecies)lstSpecies.SelectedItem);
+                    reptileView.Show();
+                }
                 break;
+
             case "Arachnid":
-                ArachnidView arachnidView = new ArachnidView();
-                arachnidView.Show();
+                if (lstSpecies.SelectedItem is ArachnidSpecies selectedArachnid)
+                {
+                    ArachnidView arachnidView = new ArachnidView((int)(ArachnidSpecies)lstSpecies.SelectedItem);
+                    arachnidView.Show();
+                }
                 break;
         }
     }
@@ -159,6 +189,4 @@ public partial class MainWindow : Window
     {
 
     }
-
-  
 }

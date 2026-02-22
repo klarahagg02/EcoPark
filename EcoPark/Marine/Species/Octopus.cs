@@ -8,14 +8,7 @@ namespace EcoPark.Marine.Species
 {
     class Octopus : Marine
     {
-        private int numOfLegs;
         private bool squirtsInk;
-
-        public int NumOfLegs
-        {
-            get { return numOfLegs; }
-            set { numOfLegs = value; }
-        }
 
         public bool SquirtsInk
         {
@@ -27,7 +20,7 @@ namespace EcoPark.Marine.Species
         public override string ToString()
         {
             string squirtsInk = SquirtsInk ? $"Yes" : "No";
-            return $"{base.ToString()}\nNumber of legs = {NumOfLegs}\nSquirts ink = {squirtsInk}";
+            return $"{base.ToString()}\nSquirts ink = {squirtsInk}";
         }
     }
 }

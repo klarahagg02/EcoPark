@@ -8,7 +8,6 @@ namespace EcoPark.Birds
 {
     public enum BirdSpecies
     {
-        Flamingo,
         Pelican,
         Penguin
     }

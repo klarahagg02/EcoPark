@@ -21,7 +21,7 @@
         <TextBlock x:Name="txtblock1" HorizontalAlignment="Left" Height="20" Margin="60,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="68"><Run Text="TextBlock"/><Run Language="sv-se" Text="1"/></TextBlock>
         <TextBox x:Name="txtInputBlock1" HorizontalAlignment="Left" Height="20" Margin="140,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85"/>
         <TextBlock x:Name="txtblock2" HorizontalAlignment="Left" Height="18" Margin="60,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80"><Run Text="TextBlock"/><Run Language="sv-se" Text="2"/></TextBlock>
-        <CheckBox x:Name="checkbox" Content="Yes" HorizontalAlignment="Left" Height="18" Margin="140,285,0,0" VerticalAlignment="Top" Width="51"/>
+        <CheckBox x:Name="chkInput" Content="Yes" HorizontalAlignment="Left" Height="18" Margin="140,285,0,0" VerticalAlignment="Top" Width="51"/>
 
     </Grid>
 </Window>

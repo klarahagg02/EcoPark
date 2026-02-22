@@ -9,17 +9,17 @@ namespace EcoPark.Arachnids.Species
     class Scorpion : Arachnid
     {
         //find a unique attribute for scorpion soon!
-        private int clawSize;
+        private int clawLength;
 
-        public int ClawSize
+        public int ClawLength
         {
-            get { return clawSize; }
-            set { clawSize = value; }
+            get { return clawLength; }
+            set { clawLength = value; }
         }
 
         public override string ToString()
         {
-            return $"{base.ToString()}\nClaw size = {ClawSize} cm";
+            return $"{base.ToString()}\nClaw size = {ClawLength} cm";
         }
 
     }
