@@ -16,9 +16,11 @@ namespace EcoPark.Marine.Species
             set { carnivore = value; }
         }
 
+        //check if bool is correct
         public override string ToString()
         {
-            return base.ToString() + $"write things here";
+            string carnivore = Carnivore ? $"Yes" : "No";
+            return $"{base.ToString()}\nCarnivore = {carnivore}";
         }
     }
 }

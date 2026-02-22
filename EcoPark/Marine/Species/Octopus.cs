@@ -23,9 +23,11 @@ namespace EcoPark.Marine.Species
             set { squirtsInk = value; }
         }
 
+        //check if bool is correct
         public override string ToString()
         {
-            return base.ToString() + $"write things here";
+            string squirtsInk = SquirtsInk ? $"Yes" : "No";
+            return $"{base.ToString()}\nNumber of legs = {NumOfLegs}\nSquirts ink = {squirtsInk}";
         }
     }
 }
