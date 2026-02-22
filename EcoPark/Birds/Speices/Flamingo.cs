@@ -12,9 +12,10 @@ namespace EcoPark.Birds.Speices
 
         public string ColorIntensity { get; set; }
 
+        //check if array value is correct in here
         public override string ToString()
         {
-            return base.ToString() + $"write things here";
+            return $"{base.ToString()}\nColor intensity = {ColorIntensity}";
         }
     }
 }

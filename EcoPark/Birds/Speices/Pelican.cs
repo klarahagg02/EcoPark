@@ -18,7 +18,7 @@ namespace EcoPark.Birds.Speices
 
         public override string ToString()
         {
-            return base.ToString() + $"write things here";
+            return $"{base.ToString()}\nBeak length = {BeakLength}";
         }
     }
 }

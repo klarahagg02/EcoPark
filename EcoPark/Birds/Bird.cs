@@ -12,9 +12,24 @@ namespace EcoPark.Birds
         private int wingspan;
         private bool canFly;
 
+        public int Wingspan
+        {
+            get { return wingspan; }
+            set { wingspan = value; }
+        }
+
+        public bool CanFly
+        {
+            get { return canFly; }
+            set { canFly = value; }
+        }
+
+        //check bool
         public override string ToString()
         {
-            return base.ToString() + $"write things here";
+
+            string canFly = CanFly ? $"Yes" : "No";
+            return $"{base.ToString()}\nWingspan = {Wingspan}\nCan fly = {canFly}\n";
         }
     }
 }
