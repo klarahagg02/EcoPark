@@ -101,7 +101,8 @@ namespace EcoPark.View
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
-
+            animal = null; // Set the animal to null to indicate cancellation
+            this.Close(); // Close the window
         }
     }
 }
