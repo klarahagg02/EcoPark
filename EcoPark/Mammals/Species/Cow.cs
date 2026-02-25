@@ -16,6 +16,11 @@ namespace EcoPark.Mammals.Species
             set { milkProduction = value; }
         }
 
+        public Cow(int milkProduction)
+        {
+            this.milkProduction = milkProduction;
+        }
+
         public override string ToString()
         {
             return $"{base.ToString()}\nMilk production = {MilkProduction} liters";

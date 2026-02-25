@@ -1,6 +1,7 @@
-﻿using EcoPark.Amphibians;
+using EcoPark.Amphibians;
+using EcoPark.Amphibians.Species;
 using EcoPark.AnimalsGen;
-using EcoPark.Arachnids;
+using EcoPark.Mammals;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -97,6 +98,28 @@ namespace EcoPark.View
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
+            CreateAmphibianSpecies();
+            DialogResult = true;
+            Close();
+        }
+
+        private void CreateAmphibianSpecies()
+        {
+            string color = txtColor.Text;
+            bool livesInWater = radioBtnYes.IsChecked == true;
+            animal = AmphibianFactory.CreateAmphibian(species, livesInWater, color);
+
+            switch (species)
+            {
+                case AmphibianSpecies.Axolotl:
+                    Axolotl axolotl = (Axolotl)animal;
+                    axolotl.RegrowLimbs = chkInput.IsChecked ?? false;
+                    break;
+                case AmphibianSpecies.Frog:
+                    Frog frog = (Frog)animal;
+                    frog.IsPoisonous = chkInput.IsChecked ?? false;
+                    break;
+            }
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)

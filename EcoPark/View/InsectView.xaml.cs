@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using EcoPark.AnimalsGen;
 using EcoPark.Insects;
+using EcoPark.Insects.Species;
 using EcoPark.Mammals;
 
 namespace EcoPark.View
@@ -96,7 +97,28 @@ namespace EcoPark.View
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
+            CreateInsectSpecies();
+            DialogResult = true;
+            Close();
+        }
 
+        private void CreateInsectSpecies()
+        {
+            string color = txtColor.Text;
+            bool canFly = radioBtnYes.IsChecked == true;
+            animal = InsectFactory.CreateInsect(species, canFly, color);
+
+            switch (species)
+            {
+                case InsectSpecies.Bee:
+                    Bee bee = (Bee)animal;
+                    bee.TypeOfBee = txtInputBlock1.Text;
+                    break;
+                case InsectSpecies.Ladybug:
+                    Ladybug ladybug = (Ladybug)animal;
+                    ladybug.NumOfDots = int.Parse(txtInputBlock1.Text);
+                    break;
+            }
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using EcoPark.AnimalsGen;
 using EcoPark.Mammals;
 using EcoPark.Marine;
+using EcoPark.Marine.Species;
 
 namespace EcoPark.View
 {
@@ -102,7 +103,28 @@ namespace EcoPark.View
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
+            CreateMarineSpecies();
+            DialogResult = true;
+            Close();
+        }
 
+        private void CreateMarineSpecies()
+        {
+            int livingDepth = int.Parse(txtLivingDeph.Text);
+            string color = txtColor.Text;
+            animal = MarineFactory.CreateMarine(species, livingDepth, color);
+
+            switch (species)
+            {
+                case MarineSpecies.Octopus:
+                    Octopus octopus = (Octopus)animal;
+                    octopus.SquirtsInk = chkInput.IsChecked ?? false;
+                    break;
+                case MarineSpecies.Shark:
+                    Shark shark = (Shark)animal;
+                    shark.Carnivore = chkInput.IsChecked ?? false;
+                    break;
+            }
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)

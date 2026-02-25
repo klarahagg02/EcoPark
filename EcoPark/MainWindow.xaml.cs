@@ -1,4 +1,4 @@
-﻿using EcoPark.Amphibians;
+using EcoPark.Amphibians;
 using EcoPark.AnimalsGen;
 using EcoPark.Mammals;
 using EcoPark.Birds;
@@ -25,35 +25,48 @@ namespace EcoPark;
 /// </summary>
 public partial class MainWindow : Window
 {
-    
+    //to reach the animals atributes
+    private Animal animal = new Animal();
     
     public MainWindow()
     {
         InitializeComponent();
         //fill listbox with categories from the enum CategoryType
         InitializeCategoryLstBox();
+        InitializeGenders();
     }
 
+    //to get the data from the general data section
     private void ReadGenAnimalData()
     {
-        //how do i reach them from the instance vaiables in Animal?
-        //Id?
-       // Name = txtName.Text;
-        //Age = int.Parse(txtAge.Text);
-       // Gender = cboSelectGender.SelectedItem.ToString();
-       // Weight = int.Parse(txtWeight.Text);
+        
+        if (animal == null)
+            return;
+        
+            animal.Name = txtName.Text;
+            animal.Age = int.Parse(txtAge.Text);
+            animal.Gender = (GenderType)Enum.Parse(typeof(GenderType),cboSelectGender.SelectedItem.ToString());
+            animal.Weight = int.Parse(txtWeight.Text);
     }
 
     //when Add is clicked in the general data section, read the data and save it in the instance variables in the Animal class
     private void btnAddGenData_Click(object sender, RoutedEventArgs e)
     {
         ReadGenAnimalData();
-        //ReadSpeciesSpecificData(); ???
+        UpdateUI();
+    }
+
+    private void UpdateUI()
+    {
+        if (animal == null)
+            return;
+        //print the data from the whole animal (cat, turtle or bee etc) in the output textbox
+        txtAnimalOutput.Text = animal.ToString();
     }
 
     private void btnCreateAnimal_Click(object sender, RoutedEventArgs e)
     {
-        //write code that reads what item in the comboboxes that were
+        //switch that reads what item in the comboboxes that were
         //selected and opens a NEW WINDOW with the correct animal category and correct species textboxes
         switch (lstCategories.SelectedItem.ToString())
         {
@@ -61,7 +74,12 @@ public partial class MainWindow : Window
                 if (lstSpecies.SelectedItem is MammalSpecies selectedMammal)
                 {
                     MammalView mammalView = new MammalView((int)(MammalSpecies)lstSpecies.SelectedItem);
-                    mammalView.Show();
+                   // mammalView.ShowDialog();
+                    if (mammalView.ShowDialog() == true)
+                    {
+                        // Get the created animal from the MammalView
+                        animal = mammalView.Animal;
+                    }
                 }
                 break;
 
@@ -69,7 +87,10 @@ public partial class MainWindow : Window
                 if (lstSpecies.SelectedItem is AmphibianSpecies selectedAmphibian)
                 {
                     AmphibianView amphibianView = new AmphibianView((int)(AmphibianSpecies)lstSpecies.SelectedItem);
-                    amphibianView.Show();
+                    if (amphibianView.ShowDialog() == true)
+                    {
+                        animal = amphibianView.Animal;
+                    }
                 }
                 break;
 
@@ -77,7 +98,10 @@ public partial class MainWindow : Window
                 if (lstSpecies.SelectedItem is BirdSpecies selectedBird)
                 {
                     BirdView birdView = new BirdView((int)(BirdSpecies)lstSpecies.SelectedItem);
-                    birdView.Show();
+                    if (birdView.ShowDialog() == true)
+                    {
+                        animal = birdView.Animal;
+                    }
                 }
                 break;
 
@@ -85,7 +109,10 @@ public partial class MainWindow : Window
                 if (lstSpecies.SelectedItem is MarineSpecies selectedMarine)
                 {
                     MarineView marineView = new MarineView((int)(MarineSpecies)lstSpecies.SelectedItem);
-                    marineView.Show();
+                    if (marineView.ShowDialog() == true)
+                    {
+                        animal = marineView.Animal;
+                    }
                 }
                 break;
 
@@ -93,7 +120,10 @@ public partial class MainWindow : Window
                 if (lstSpecies.SelectedItem is InsectSpecies selectedInsect)
                 {
                     InsectView insectView = new InsectView((int)(InsectSpecies)lstSpecies.SelectedItem);
-                    insectView.Show();
+                    if (insectView.ShowDialog() == true)
+                    {
+                        animal = insectView.Animal;
+                    }
                 }
                 break;
 
@@ -101,7 +131,10 @@ public partial class MainWindow : Window
                 if (lstSpecies.SelectedItem is ReptileSpecies selectedReptile)
                 {
                     ReptileView reptileView = new ReptileView((int)(ReptileSpecies)lstSpecies.SelectedItem);
-                    reptileView.Show();
+                    if (reptileView.ShowDialog() == true)
+                    {
+                        animal = reptileView.Animal;
+                    }
                 }
                 break;
 
@@ -109,13 +142,16 @@ public partial class MainWindow : Window
                 if (lstSpecies.SelectedItem is ArachnidSpecies selectedArachnid)
                 {
                     ArachnidView arachnidView = new ArachnidView((int)(ArachnidSpecies)lstSpecies.SelectedItem);
-                    arachnidView.Show();
+                    if (arachnidView.ShowDialog() == true)
+                    {
+                        animal = arachnidView.Animal;
+                    }
                 }
                 break;
         }
     }
 
-    // Metod för att fylla comboboxen med pirattitlar
+    //method to fill comobox 1 with gategories
     private void InitializeCategoryLstBox()
     {
         foreach (CategoryType animalCategory in Enum.GetValues(typeof(CategoryType)))
@@ -126,6 +162,16 @@ public partial class MainWindow : Window
         //to prevent errors when trying to read the selected item
         //before the user has selected anything
         lstCategories.SelectedIndex = 0;
+    }
+
+    private void InitializeGenders()
+    {
+        foreach (GenderType gender in Enum.GetValues(typeof(GenderType)))
+        {
+            cboSelectGender.Items.Add(gender);
+        }
+        //it automatically selects the first gender to prevent errors
+        cboSelectGender.SelectedIndex = 0;
     }
 
     //to get the right species in the second combobox based on
@@ -146,6 +192,7 @@ public partial class MainWindow : Window
         {
             //do a switch case for each category and fill the species list
             //with the correct species for the chosen category
+            //eventually erase the folder names?
             switch (selectedCategory)
             {
                 case CategoryType.Mammal:

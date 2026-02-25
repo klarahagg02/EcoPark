@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using EcoPark.AnimalsGen;
 using EcoPark.Arachnids;
+using EcoPark.Arachnids.Species;
 using EcoPark.Mammals;
 
 namespace EcoPark.View
@@ -94,7 +95,28 @@ namespace EcoPark.View
         }
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
+            CreateArachnidSpecies();
+            DialogResult = true;
+            Close();
+        }
 
+        private void CreateArachnidSpecies()
+        {
+            int numOfEyes = int.Parse(txtNumOfEyes.Text);
+            bool isPoisonous = radioBtnYes.IsChecked == true;
+            animal = ArachnidFactory.CreateArachnid(species, numOfEyes, isPoisonous);
+
+            switch (species)
+            {
+                case ArachnidSpecies.Spider:
+                    Spider spider = (Spider)animal;
+                    spider.ProduceWeb = chkInput.IsChecked ?? false;
+                    break;
+                case ArachnidSpecies.Scorpion:
+                    Scorpion scorpion = (Scorpion)animal;
+                    scorpion.ClawLength = int.Parse(txtInputBlock1.Text);
+                    break;
+            }
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)

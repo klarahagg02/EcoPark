@@ -15,8 +15,8 @@
         <TextBlock HorizontalAlignment="Left" Height="19" Margin="72,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="47"><Run Language="sv-se" Text="Can fly?"/></TextBlock>
         <RadioButton x:Name="radioBtnYes" Content="Yes" HorizontalAlignment="Left" Height="19" Margin="124,123,0,0" VerticalAlignment="Top" Width="38" RenderTransformOrigin="0.193,-0.356"/>
         <RadioButton x:Name="radioBtnNo" Content="No" HorizontalAlignment="Left" Height="19" Margin="175,123,0,0" VerticalAlignment="Top" Width="52"/>
-        <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" Height="33" Margin="84,336,0,0" VerticalAlignment="Top" Width="66" Click="btnOK_Click" Background="#FF56B32D" FontWeight="Bold"/>
-        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Height="33" Margin="182,336,0,0" VerticalAlignment="Top" Width="68" Click="btnCancel_Click" Background="#FFFF1B1B" FontWeight="Bold"/>
+        <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" Height="33" Margin="84,336,0,0" VerticalAlignment="Top" Width="66" Click="btnOK_Click" Background="#FF56B32D" FontWeight="Bold" IsDefault="True"/>
+        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Height="33" Margin="182,336,0,0" VerticalAlignment="Top" Width="68" Click="btnCancel_Click" Background="#FFFF1B1B" FontWeight="Bold" IsCancel="True"/>
         <TextBlock x:Name="txtSpecificSpecies" HorizontalAlignment="Left" Height="24" Margin="38,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171" FontWeight="Bold"><Run Language="sv-se" Text="x Specific Data"/></TextBlock>
         <TextBlock x:Name="txtblock1" HorizontalAlignment="Left" Height="20" Margin="60,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="68"><Run Text="TextBlock"/><Run Language="sv-se" Text="1"/></TextBlock>
         <TextBox x:Name="txtInputBlock1" HorizontalAlignment="Left" Height="20" Margin="140,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85"/>

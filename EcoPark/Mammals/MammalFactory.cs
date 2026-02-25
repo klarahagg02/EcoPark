@@ -1,35 +1,38 @@
-﻿using EcoPark.Amphibians;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EcoPark;
+using EcoPark.Mammals.Species;
 
 namespace EcoPark.Mammals
+
 {
     class MammalFactory
     {
-        //this class shouldnt have 
-       // public static Mammal CreateMammal(MammalSpecies species, int numOfLegs, int tailLength)
-       // {
-          //  Mammal mammal = null;
+        public static Mammal CreateMammal(MammalSpecies species, int numOfLegs, int tailLength)
+        {
+            Mammal mammal;
 
-            //species comes from the mammal enum in the same namespace
-           /* switch (species)
+            switch (species)
             {
                 case MammalSpecies.Cat:
-                    mammal = new Cat(numOfLegs, tailLength);
+                    mammal = new Cat(allergyFriendly: false);
                     break;
-
                 case MammalSpecies.Dog:
-                    mammal = new Dog(numOfLegs, tailLength);
+                    mammal = new Dog(breed: "");
                     break;
-
                 case MammalSpecies.Cow:
-                    mammal = new Cow(numOfLegs, tailLength);
+                    mammal = new Cow(milkProduction: 0);
                     break;
+                default:
+                    return null;
             }
-            return mammal;*/
-       // }
+            mammal.NumOfLegs = numOfLegs;
+            mammal.TailLength = tailLength;
+            return mammal;
+        }
     }
 }
+    

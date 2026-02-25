@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using EcoPark.Mammals;
 using EcoPark.AnimalsGen;
+using EcoPark.Mammals.Species;
 
 namespace EcoPark.View
 {
@@ -22,9 +23,10 @@ namespace EcoPark.View
     public partial class MammalView : Window
     {
 
-        //property to enable smooth data transfer between MainForm and this Form
+        //property to enable smooth data transfer between MainWindow and this Window
         public Animal Animal
         {
+            //to get or set the animal that will be a cat, dog or cow
             get { return animal; }
             set 
             { 
@@ -103,17 +105,35 @@ namespace EcoPark.View
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
-            //numoflegs and taillength
-            //all specific species data as well!
-            int numOfLegs = int.Parse(txtNumOfLegs.Text);
-            int tailLength = int.Parse(txtTailLength.Text);
-
-            //call method that reads the specific data for the species that was selected in the MainWindow
-            //and saves it in the instance variables in Mammal.cs 
-            
+            CreateMammalSpecies();
+            DialogResult = true; // Set the dialog result to true to indicate successful creation
+            Close(); // Close the window after creating the animal
         }
 
+        private void CreateMammalSpecies()
+        {
+            int numOfLegs = int.Parse(txtNumOfLegs.Text);
+            int tailLength = int.Parse(txtTailLength.Text);
+            //calling methos in mammalfacotry that returns a "finished" mammal object. 
+            animal = MammalFactory.CreateMammal(species, numOfLegs, tailLength);
 
+            switch (species)
+            {
+                case MammalSpecies.Cat:
+                    Cat cat = (Cat)animal;
+                    cat.AllergyFriendly = chkInput.IsChecked ?? false;
+                    break;
+                case MammalSpecies.Cow:
+                    Cow cow = (Cow)animal;
+                    cow.MilkProduction = int.Parse(txtInputBlock1.Text);
+                    break;
+
+                case MammalSpecies.Dog:
+                    Dog dog = (Dog)animal;
+                    dog.Breed = txtInputBlock1.Text;
+                    break;
+            }
+        }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using EcoPark.AnimalsGen;
 using EcoPark.Birds;
+using EcoPark.Birds.Speices;
 using EcoPark.Mammals;
 
 namespace EcoPark.View
@@ -95,7 +96,28 @@ namespace EcoPark.View
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
+            CreateBirdSpecies();
+            DialogResult = true;
+            Close();
+        }
 
+        private void CreateBirdSpecies()
+        {
+            int wingspan = int.Parse(txtWingspan.Text);
+            bool canFly = radioBtnYes.IsChecked == true;
+            animal = BirdFactory.CreateBird(species, wingspan, canFly);
+
+            switch (species)
+            {
+                case BirdSpecies.Pelican:
+                    Pelican pelican = (Pelican)animal;
+                    pelican.BeakLength = double.Parse(txtInputBlock1.Text);
+                    break;
+                case BirdSpecies.Penguin:
+                    Penguin penguin = (Penguin)animal;
+                    penguin.Habitat = txtInputBlock1.Text;
+                    break;
+            }
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)

@@ -8,7 +8,7 @@ using EcoPark;
 namespace EcoPark.AnimalsGen
 {
     //abstract class - cannot be instantiated, only inherited from. this is the parent class
-    public abstract class Animal
+    public class Animal
     {
         //this class should ONLY have the default constructor
 
@@ -49,13 +49,13 @@ namespace EcoPark.AnimalsGen
         }
 
 
-        //add methods common to all animals
+        //add methods common to all animals in later updates.
 
 
         //to represent the objects in text-form in the output
         public override string ToString()
         {
-            return $"Name: {Name}, Gender: {Gender}, Age: {Age}, Weight: {Weight}g";
+            return $"Name: {Name}\nAge: {Age}\nWeight: {Weight}g\nGender: {Gender}\n";
         }
 
     }

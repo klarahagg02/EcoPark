@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,11 +12,10 @@ namespace EcoPark.Mammals.Species
         //instance variable
         private bool allergyFriendly;
 
-        //constructor
+        // Konstruktor – bara Cat-specifik data. NumOfLegs/TailLength sätts via properties i factory.
         public Cat(bool allergyFriendly)
         {
             this.allergyFriendly = allergyFriendly;
-
         }
 
         //property to get/set the instance variable

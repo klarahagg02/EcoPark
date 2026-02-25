@@ -157,12 +157,6 @@
             Background="#FF49A421"
             Click="btnAddGenData_Click"
             Content="Add" />
-        <TextBlock
-            Width="144"
-            Height="33"
-            Margin="479,188,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            TextWrapping="Wrap"><Run Language="sv-se" Text="image stuff will be on this side of the UI" /></TextBlock>
+        <TextBox x:Name="txtAnimalOutput" HorizontalAlignment="Left" Height="255" Margin="378,138,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="194"/>
     </Grid>
 </Window>

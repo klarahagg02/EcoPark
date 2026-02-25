@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using EcoPark.AnimalsGen;
 using EcoPark.Mammals;
 using EcoPark.Reptiles;
+using EcoPark.Reptiles.Species;
 
 namespace EcoPark.View
 {
@@ -94,9 +95,31 @@ namespace EcoPark.View
             element.Visibility = isVisible ? Visibility.Visible : Visibility.Collapsed;
         }
 
+        private void CreateReptileSpecies()
+        {
+            int bodyLength = int.Parse(txtBodyLength.Text);
+            bool livesInWater = radioBtnYes.IsChecked == true;
+            animal = ReptileFactory.CreateReptile(species, bodyLength, livesInWater);
+
+            switch (species)
+            {
+                case ReptileSpecies.Snake:
+                    Snake snake = (Snake)animal;
+                    snake.IsVenomous = chkInput.IsChecked ?? false;
+                    break;
+                case ReptileSpecies.Turtle:
+                    Turtle turtle = (Turtle)animal;
+                    turtle.ShellColor = txtInputBlock1.Text;
+                    break;
+            }
+        }
+
+
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
-
+            CreateReptileSpecies();
+            DialogResult = true;
+            Close();
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
