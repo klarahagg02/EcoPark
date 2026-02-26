@@ -7,8 +7,14 @@ using EcoPark.Marine.Species;
 
 namespace EcoPark.Marine
 {
+    /// <summary>
+    /// Factory class to be able to create marine objects, to reduce code repetition and make it easier for future use
+    /// if I want to add more species. It'll be easier to maintain the code from here.
+    /// </summary>
     class MarineFactory
     {
+        //method to create marines with the same base properties,
+        //then add on special properties for the species based on a switch case, and return the marine object
         public static Marine CreateMarine(MarineSpecies species, int livingDepth, string color)
         {
             Marine marine;

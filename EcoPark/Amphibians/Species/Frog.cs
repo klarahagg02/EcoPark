@@ -9,15 +9,17 @@ namespace EcoPark.Amphibians.Species
 {
     public class Frog : Amphibian
     {
-        //have both instance variables and properties here!
         private bool isPoisonous;
 
-        public bool IsPoisonous { get; set; }
+        //proprty to reach and use the instance variable
+        public bool IsPoisonous 
+            {
+            get {return isPoisonous;}
+            set {isPoisonous = value;}
+            }
 
 
-        //this method first calls parent class then grandpartent class to get ALL of the
-        //things that should be included in the output 
-        //check if bool is correct
+        //override ToString() method to print the object and handling polymorphism. Adds on from its parent.
         public override string ToString()
         {
             string isPoisonous = IsPoisonous ? $"Yes" : "No";

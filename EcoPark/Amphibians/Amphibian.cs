@@ -13,19 +13,19 @@ namespace EcoPark.Amphibians
         private bool livesInWater;
         private string color;
 
+        //properties to get/set the instance variables
         public bool LivesInWater
         {
             get { return livesInWater; }
             set { livesInWater = value; }
         }
-
         public string Color
         {
             get { return color; }
             set { color = value; }
         }
 
-        //check if bool is correct
+        //override ToString() method to print the object and handling polymorphism. Adds on from its parent.
         public override string ToString()
         {
             string livesInWater = LivesInWater ? $"Yes" : "No";

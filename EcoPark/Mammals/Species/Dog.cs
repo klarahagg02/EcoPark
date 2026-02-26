@@ -10,17 +10,14 @@ namespace EcoPark.Mammals.Species
     {
         private string breed;
 
+        //property to get/set the instance variable
         public string Breed
         {
             get { return breed; }
             set { breed = value; }
         }
 
-        public Dog(string breed)
-        {
-            this.breed = breed;
-        }
-
+        //override ToString() method to print the object and handling polymorphism. Adds on from its parent.
         public override string ToString()
         {
             return $"{base.ToString()}\nBreed = {Breed}";

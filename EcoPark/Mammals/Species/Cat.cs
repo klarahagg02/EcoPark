@@ -9,14 +9,7 @@ namespace EcoPark.Mammals.Species
 {
     class Cat : Mammal
     {
-        //instance variable
         private bool allergyFriendly;
-
-        // Konstruktor – bara Cat-specifik data. NumOfLegs/TailLength sätts via properties i factory.
-        public Cat(bool allergyFriendly)
-        {
-            this.allergyFriendly = allergyFriendly;
-        }
 
         //property to get/set the instance variable
         public bool AllergyFriendly

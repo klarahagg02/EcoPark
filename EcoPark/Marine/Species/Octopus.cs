@@ -10,13 +10,14 @@ namespace EcoPark.Marine.Species
     {
         private bool squirtsInk;
 
+        //property to get/set the instance variable
         public bool SquirtsInk
         {
             get { return squirtsInk; }
             set { squirtsInk = value; }
         }
 
-        //check if bool is correct
+        //override ToString() method to print the object and handling polymorphism. Adds on from its parent.
         public override string ToString()
         {
             string squirtsInk = SquirtsInk ? $"Yes" : "No";

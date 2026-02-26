@@ -12,6 +12,7 @@ namespace EcoPark.Arachnids
         private int numOfEyes;
         private bool isPoisonous;
 
+        //properties to get/set the instance variables
         public int NumOfEyes 
         { 
             get { return numOfEyes; } 
@@ -24,11 +25,11 @@ namespace EcoPark.Arachnids
             set { isPoisonous = value; }
         }
 
-        //check if bool is correct
+        //override ToString() method to print the object and handling polymorphism. Adds on from its parent.
         public override string ToString()
         {
             string isPoisonous = IsPoisonous ? $"Yes" : "No";
-            return $"{base.ToString()}\nNumber of eyes = {NumOfEyes}\nIs poisonous = {isPoisonous}";
+            return $"{base.ToString()}\nNumber of eyes = {NumOfEyes}\nIs poisonous = {isPoisonous}\n";
         }
     }
 }

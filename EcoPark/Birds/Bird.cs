@@ -12,19 +12,19 @@ namespace EcoPark.Birds
         private int wingspan;
         private bool canFly;
 
+        //properties to get/set the instance variables
         public int Wingspan
         {
             get { return wingspan; }
             set { wingspan = value; }
         }
-
         public bool CanFly
         {
             get { return canFly; }
             set { canFly = value; }
         }
 
-        //check bool
+        //override ToString() method to print the object and handling polymorphism. Adds on from its parent.
         public override string ToString()
         {
 

@@ -19,10 +19,9 @@ namespace EcoPark.AnimalsGen
         private int age;
         private GenderType gender;
         private int weight;
-        //imagePath (add later)
+        //imagePath (maybe add later)
 
         //properties to get/set the instance variables. to get access
-        //double check if they all should look like this or not...
         public int Id
         {
             get { return id; }
@@ -48,15 +47,10 @@ namespace EcoPark.AnimalsGen
             set { weight = value; }
         }
 
-
-        //add methods common to all animals in later updates.
-
-
         //to represent the objects in text-form in the output
         public override string ToString()
         {
-            return $"Name: {Name}\nAge: {Age}\nWeight: {Weight}g\nGender: {Gender}\n";
+            return $"Name = {Name}\nAge = {Age}\nWeight = {Weight}g\nGender = {Gender}\n";
         }
-
     }
 }

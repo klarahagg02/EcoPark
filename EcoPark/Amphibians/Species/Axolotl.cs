@@ -10,13 +10,14 @@ namespace EcoPark.Amphibians.Species
     {
         private bool regrowLimbs;
 
+        //property to reach and use the instance variable
         public bool RegrowLimbs
         {
             get { return regrowLimbs; }
             set { regrowLimbs = value; }
         }
 
-        //check bool if its correct
+        //override ToString() method to print the object and handling polymorphism. Adds on from its parent.
         public override string ToString()
         {
             string regrowLimbs = RegrowLimbs ? $"Yes" : "No";

@@ -12,6 +12,7 @@ namespace EcoPark.Reptiles
         private int bodyLength; //in cm
         private bool livesInWater;
 
+        //properties to get/set the instance variables
         public int BodyLength
         {
             get { return bodyLength; }
@@ -23,7 +24,7 @@ namespace EcoPark.Reptiles
             set { livesInWater = value; }
         }
 
-        //check if bool is correct
+        //override ToString() method to print the object and handling polymorphism. Adds on from its parent.
         public override string ToString()
         {
             string livesInWater = LivesInWater ? $"Yes" : "No";

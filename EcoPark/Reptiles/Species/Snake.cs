@@ -10,13 +10,14 @@ namespace EcoPark.Reptiles.Species
     {
         private bool isVenomous;
 
+        //property to get/set the instance variable
         public bool IsVenomous
         {
             get { return isVenomous; }
             set { isVenomous = value; }
         }
 
-        //check if bool is correct
+        //override ToString() method to print the object and handling polymorphism. Adds on from its parent.
         public override string ToString()
         {
             string isVenomous = IsVenomous ? $"Yes" : "No";

@@ -8,15 +8,16 @@ namespace EcoPark.Reptiles.Species
 {
     class Turtle : Reptile
     {
-        //find an unique attrubute for turtle soon!
         private string shellColor;
 
+        //property to get/set the instance variable
         public string ShellColor
         {
             get { return shellColor; }
             set { shellColor = value; }
         }
 
+        //override ToString() method to print the object and handling polymorphism. Adds on from its parent.
         public override string ToString()
         {
             return $"{base.ToString()}\nShell color = {ShellColor}";

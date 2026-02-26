@@ -10,17 +10,14 @@ namespace EcoPark.Mammals.Species
     {
         private int milkProduction;
 
+        //property to get/set the instance variable
         public int MilkProduction
         {
             get { return milkProduction; }
             set { milkProduction = value; }
         }
 
-        public Cow(int milkProduction)
-        {
-            this.milkProduction = milkProduction;
-        }
-
+        //override ToString() method to print the object and handling polymorphism. Adds on from its parent.
         public override string ToString()
         {
             return $"{base.ToString()}\nMilk production = {MilkProduction} liters";

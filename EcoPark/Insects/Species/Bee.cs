@@ -10,13 +10,14 @@ namespace EcoPark.Insects.Species
     {
         private string typeOfBee;
 
-        //check if this is correct
+        //properties to get/set the instance variable
         public string TypeOfBee
         {
             get { return typeOfBee; }
             set { typeOfBee = value; }
         }
 
+        //override ToString() method to print the object and handling polymorphism. Adds on from its parent.
         public override string ToString()
         {
             return $"{base.ToString()}\nType of bee = {TypeOfBee}";

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EcoPark;
+using EcoPark.Insects.Species;
+using EcoPark.Insects;
 using EcoPark.Mammals.Species;
 
 namespace EcoPark.Mammals
@@ -11,6 +13,8 @@ namespace EcoPark.Mammals
 {
     class MammalFactory
     {
+        //method to create mammals with the same base properties,
+        //then add on special properties for the species based on a switch case, and return the mammal object
         public static Mammal CreateMammal(MammalSpecies species, int numOfLegs, int tailLength)
         {
             Mammal mammal;
@@ -18,13 +22,23 @@ namespace EcoPark.Mammals
             switch (species)
             {
                 case MammalSpecies.Cat:
-                    mammal = new Cat(allergyFriendly: false);
+                    mammal = new Cat
+                    {
+                        AllergyFriendly = false
+                    };
                     break;
+                        
                 case MammalSpecies.Dog:
-                    mammal = new Dog(breed: "");
+                    mammal = new Dog
+                    {
+                        Breed = string.Empty
+                    };
                     break;
                 case MammalSpecies.Cow:
-                    mammal = new Cow(milkProduction: 0);
+                    mammal = new Cow
+                    {
+                        MilkProduction = 0
+                    };
                     break;
                 default:
                     return null;

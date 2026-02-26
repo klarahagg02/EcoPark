@@ -27,19 +27,18 @@ public partial class MainWindow : Window
 {
     //to reach the animals atributes
     private Animal animal = new Animal();
-    
+
+    //main constructor
     public MainWindow()
     {
         InitializeComponent();
-        //fill listbox with categories from the enum CategoryType
         InitializeCategoryLstBox();
         InitializeGenders();
     }
 
-    //to get the data from the general data section
+    //to get the data from the general data info
     private void ReadGenAnimalData()
     {
-        
         if (animal == null)
             return;
         
@@ -49,25 +48,27 @@ public partial class MainWindow : Window
             animal.Weight = int.Parse(txtWeight.Text);
     }
 
-    //when Add is clicked in the general data section, read the data and save it in the instance variables in the Animal class
+    //when the button Add is clicked, the program calls rhe read general data method and then updates 
+    //the UI to show the object's data in the output.
     private void btnAddGenData_Click(object sender, RoutedEventArgs e)
     {
         ReadGenAnimalData();
         UpdateUI();
     }
 
+    //method for updating the output  with all data from the animal object.
     private void UpdateUI()
     {
         if (animal == null)
             return;
-        //print the data from the whole animal (cat, turtle or bee etc) in the output textbox
+        //print the data from the whole animal (cat, turtle, bee etc) in the output
         txtAnimalOutput.Text = animal.ToString();
     }
 
+    //when the button Create Animal is clicked, based on selected cetegory+species, a new window opens and
+    //based on the data input in that window, a new animal object is created and the data comes back to the main Window
     private void btnCreateAnimal_Click(object sender, RoutedEventArgs e)
     {
-        //switch that reads what item in the comboboxes that were
-        //selected and opens a NEW WINDOW with the correct animal category and correct species textboxes
         switch (lstCategories.SelectedItem.ToString())
         {
             case "Mammal":
@@ -151,16 +152,15 @@ public partial class MainWindow : Window
         }
     }
 
-    //method to fill comobox 1 with gategories
+    //method to fill comobox 1 with animal gategories
     private void InitializeCategoryLstBox()
     {
+        //loops through enum CategoryType and adds each category to the listbox
         foreach (CategoryType animalCategory in Enum.GetValues(typeof(CategoryType)))
         {
             lstCategories.Items.Add(animalCategory);
         }
-        //to select the first item in the list by default,
-        //to prevent errors when trying to read the selected item
-        //before the user has selected anything
+        //it automatically selects the first animal to prevent errors
         lstCategories.SelectedIndex = 0;
     }
 
@@ -174,7 +174,7 @@ public partial class MainWindow : Window
         cboSelectGender.SelectedIndex = 0;
     }
 
-    //to get the right species in the second combobox based on
+    //to get the right species in combobox 2 based on
     //what category is selected in the first one
     private void lstCategories_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
@@ -184,7 +184,7 @@ public partial class MainWindow : Window
         FillRightSpeciesList();
     }
 
-
+    
     //help-method to fill the species list based on chosen category
     private void FillRightSpeciesList()
     {
@@ -192,29 +192,28 @@ public partial class MainWindow : Window
         {
             //do a switch case for each category and fill the species list
             //with the correct species for the chosen category
-            //eventually erase the folder names?
             switch (selectedCategory)
             {
                 case CategoryType.Mammal:
-                    FillListOfSpecies<Mammals.MammalSpecies>();
+                    FillListOfSpecies<MammalSpecies>();
                     break;
                 case CategoryType.Amphibian:
-                    FillListOfSpecies<Amphibians.AmphibianSpecies>();
+                    FillListOfSpecies<AmphibianSpecies>();
                     break;
                 case CategoryType.Bird:
-                    FillListOfSpecies<Birds.BirdSpecies>();
+                    FillListOfSpecies<BirdSpecies>();
                     break;
                 case CategoryType.Marine:
-                    FillListOfSpecies<Marine.MarineSpecies>();
+                    FillListOfSpecies<MarineSpecies>();
                     break;
                 case CategoryType.Insect:
-                    FillListOfSpecies<Insects.InsectSpecies>();
+                    FillListOfSpecies<InsectSpecies>();
                     break;
                 case CategoryType.Reptile:
-                    FillListOfSpecies<Reptiles.ReptileSpecies>();
+                    FillListOfSpecies<ReptileSpecies>();
                     break;
                 case CategoryType.Arachnid:
-                    FillListOfSpecies<Arachnids.ArachnidSpecies>();
+                    FillListOfSpecies<ArachnidSpecies>();
                     break;
             }
         }
@@ -223,15 +222,16 @@ public partial class MainWindow : Window
     //help-method to fill the species list with the correct species based on the chosen category
     private void FillListOfSpecies<T>() where T : Enum
     {
-        //loop through the enum values of the species type and add them to the listOfSpecies
+        //loop through the enum values of the species type and add them to istOfSpecies
         foreach (T species in Enum.GetValues(typeof(T)))
         {
             lstSpecies.Items.Add(species);
         }
-        //default to select first item to prevent errors if user doesnt click anything
+        //default to select first item to prevent errors if user doesn't click anything
         lstSpecies.SelectedIndex = 0;
     }
 
+    //so that the combobox will work in the UI
     private void ComboBox_GenderSelection(object sender, SelectionChangedEventArgs e)
     {
 

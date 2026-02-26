@@ -7,11 +7,11 @@ using EcoPark;
 
 namespace EcoPark.AnimalsGen
 {
+    //enum to represent the different genders animals can have
     public enum GenderType
     {
         Female,
         Male,
         Unknown
-            //hermafrodit
     }
 }

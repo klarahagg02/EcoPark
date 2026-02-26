@@ -8,15 +8,16 @@ namespace EcoPark.Arachnids.Species
 {
     class Scorpion : Arachnid
     {
-        //find a unique attribute for scorpion soon!
         private int clawLength;
 
+        //properties to get/set the instance variable
         public int ClawLength
         {
             get { return clawLength; }
             set { clawLength = value; }
         }
 
+        //override ToString() method to print the object and handling polymorphism. Adds on from its parent.
         public override string ToString()
         {
             return $"{base.ToString()}\nClaw size = {ClawLength} cm";

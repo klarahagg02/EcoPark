@@ -10,13 +10,14 @@ namespace EcoPark.Arachnids.Species
     {
         private bool produceWeb;
 
+        //properties to get/set the instance variable
         public bool ProduceWeb
         {
             get { return produceWeb; }
             set { produceWeb = value; }
         }
 
-        //check if bool is correct
+        //override ToString() method to print the object and handling polymorphism. Adds on from its parent.
         public override string ToString()
         {
             string produceWeb = ProduceWeb ? $"Yes" : "No";

@@ -10,12 +10,14 @@ namespace EcoPark.Birds.Speices
     {
         private double beakLength;
 
+        //properties to get/set the instance variable
         public double BeakLength
         {
             get { return beakLength; }
             set { beakLength = value; }
         }
 
+        //override ToString() method to print the object and handling polymorphism. Adds on from its parent.
         public override string ToString()
         {
             return $"{base.ToString()}\nBeak length = {BeakLength}";

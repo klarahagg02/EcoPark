@@ -10,12 +10,14 @@ namespace EcoPark.Insects.Species
     {
         private int numOfDots;
 
+        //properties to get/set the instance variable
         public int NumOfDots
         {
             get { return numOfDots; }
             set { numOfDots = value; }
         }
 
+        //override ToString() method to print the object and handling polymorphism. Adds on from its parent.
         public override string ToString()
         {
             return $"{base.ToString()}\nNumber of dots = {NumOfDots}";
