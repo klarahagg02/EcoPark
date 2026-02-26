@@ -49,4 +49,3 @@ namespace EcoPark.Mammals
         }
     }
 }
-    

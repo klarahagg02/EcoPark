@@ -27,7 +27,6 @@ namespace EcoPark.Birds
         //override ToString() method to print the object and handling polymorphism. Adds on from its parent.
         public override string ToString()
         {
-
             string canFly = CanFly ? $"Yes" : "No";
             return $"{base.ToString()}\nWingspan = {Wingspan}\nCan fly = {canFly}\n";
         }

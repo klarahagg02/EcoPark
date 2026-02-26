@@ -81,6 +81,17 @@ namespace EcoPark.View
         //when clicked OK, a new species object is created and the window closes
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
+            //if-statements to check if the input is valid, and if not, show a messagebox to prevent crashing. 
+            if (string.IsNullOrWhiteSpace(txtColor.Text))
+            {
+                MessageBox.Show("Write a color", "Color missing", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (double.TryParse(txtColor.Text.Trim(), out _))
+            {
+                MessageBox.Show("Write a color in text-form, not number", "Invalid color", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
             CreateAmphibianSpecies();
             DialogResult = true;
             Close();

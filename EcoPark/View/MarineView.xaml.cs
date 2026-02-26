@@ -86,6 +86,22 @@ namespace EcoPark.View
         //when clicked OK, a new species object is created and the window closes
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
+            //if-statements to check if the input is valid, and if not, show a messagebox to prevent crashing. 
+            if (!int.TryParse(txtLivingDeph.Text, out int depthVal) || depthVal < 0)
+            {
+                MessageBox.Show("Write a valid living deph", "Invalid input", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(txtColor.Text))
+            {
+                MessageBox.Show("Fill in the color", "Color missing", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (double.TryParse(txtColor.Text.Trim(), out _))
+            {
+                MessageBox.Show("Write the color in text-form, no numbers", "Invalid color", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
             CreateMarineSpecies();
             DialogResult = true;
             Close();

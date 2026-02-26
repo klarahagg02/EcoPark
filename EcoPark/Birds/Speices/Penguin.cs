@@ -22,6 +22,5 @@ namespace EcoPark.Birds.Speices
         {
             return $"{base.ToString()}\nHabitat = {Habitat}";
         }
-
     }
 }

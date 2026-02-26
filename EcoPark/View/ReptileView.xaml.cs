@@ -99,6 +99,22 @@ namespace EcoPark.View
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
+            //if-statements to check if the input is valid, and if not, show a messagebox to prevent crashing. 
+            if (!int.TryParse(txtBodyLength.Text, out int bodyLengthVal) || bodyLengthVal < 0)
+            {
+                MessageBox.Show("Write a valid body length", "Invalid input", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (species == ReptileSpecies.Turtle && string.IsNullOrWhiteSpace(txtInputBlock1.Text))
+            {
+                MessageBox.Show("Fill in the shell color", "Shell color missing", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (species == ReptileSpecies.Turtle && double.TryParse(txtInputBlock1.Text.Trim(), out _))
+            {
+                MessageBox.Show("Write shell color in text-form, on numbers", "Invalid shell color", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
             CreateReptileSpecies();
             DialogResult = true;
             Close();

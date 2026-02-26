@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -90,6 +90,30 @@ namespace EcoPark.View
         //when clicked OK, a new species object is created and the window closes
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
+            //if-statements to check if the input is valid, and if not, show a messagebox to prevent crashing. 
+            if (!int.TryParse(txtNumOfLegs.Text, out int numOfLegsVal) || numOfLegsVal < 0)
+            {
+                MessageBox.Show("Write a valid number of legs", "Invalid input", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (!int.TryParse(txtTailLength.Text, out int tailLengthVal) || tailLengthVal < 0)
+            {
+                MessageBox.Show("Write a valid number for tail length", "Invalid input", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (species == MammalSpecies.Cow)
+            {
+                if (!int.TryParse(txtInputBlock1.Text, out int milkVal) || milkVal < 0)
+                {
+                    MessageBox.Show("Write a valid number for milk production", "Invalid input", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+            }
+            if (species == MammalSpecies.Dog && string.IsNullOrWhiteSpace(txtInputBlock1.Text))
+            {
+                MessageBox.Show("Fill in the breed", "Breed missing", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
             CreateMammalSpecies();
             DialogResult = true; // Set the dialog result to true to indicate successful creation
             Close(); // Close the window after creating the animal

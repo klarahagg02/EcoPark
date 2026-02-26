@@ -39,13 +39,32 @@ public partial class MainWindow : Window
     //to get the data from the general data info
     private void ReadGenAnimalData()
     {
-        if (animal == null)
+        //a lot of if-statements to check if the input is valid, and if not, show a messagebox to prevent crashing. 
+        if (string.IsNullOrWhiteSpace(txtName.Text))
+        {
+            MessageBox.Show("Fill in the name", "Name is missing", MessageBoxButton.OK, MessageBoxImage.Warning);
             return;
-        
-            animal.Name = txtName.Text;
-            animal.Age = int.Parse(txtAge.Text);
-            animal.Gender = (GenderType)Enum.Parse(typeof(GenderType),cboSelectGender.SelectedItem.ToString());
-            animal.Weight = int.Parse(txtWeight.Text);
+        }
+        if (!int.TryParse(txtAge.Text, out int age) || age < 0)
+        {
+            MessageBox.Show("Write a valid age (0 or more years)", "Invalid age", MessageBoxButton.OK, MessageBoxImage.Warning);
+            return;
+        }
+        if (cboSelectGender.SelectedItem == null)
+        {
+            MessageBox.Show("Choose a gender", "Gender missing", MessageBoxButton.OK, MessageBoxImage.Warning);
+            return;
+        }
+        if (!int.TryParse(txtWeight.Text, out int weight) || weight <= 0)
+        {
+            MessageBox.Show("Write a valid weight", "Invalid weight", MessageBoxButton.OK, MessageBoxImage.Warning);
+            return;
+        }
+
+        animal.Name = txtName.Text;
+        animal.Age = int.Parse(txtAge.Text);
+        animal.Gender = (GenderType)Enum.Parse(typeof(GenderType),cboSelectGender.SelectedItem.ToString());
+        animal.Weight = int.Parse(txtWeight.Text);
     }
 
     //when the button Add is clicked, the program calls rhe read general data method and then updates 
@@ -75,7 +94,6 @@ public partial class MainWindow : Window
                 if (lstSpecies.SelectedItem is MammalSpecies selectedMammal)
                 {
                     MammalView mammalView = new MammalView((int)(MammalSpecies)lstSpecies.SelectedItem);
-                   // mammalView.ShowDialog();
                     if (mammalView.ShowDialog() == true)
                     {
                         // Get the created animal from the MammalView
@@ -183,7 +201,6 @@ public partial class MainWindow : Window
         //call method to fill the species list with the correct species based on the chosen category
         FillRightSpeciesList();
     }
-
     
     //help-method to fill the species list based on chosen category
     private void FillRightSpeciesList()

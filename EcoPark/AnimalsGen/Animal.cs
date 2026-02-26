@@ -17,7 +17,6 @@ namespace EcoPark.AnimalsGen
         private int age;
         private GenderType gender;
         private int weight;
-        //imagePath (maybe add later)
 
         //properties to get/set the instance variables. to get access
         public int Id

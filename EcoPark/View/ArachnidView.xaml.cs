@@ -82,6 +82,17 @@ namespace EcoPark.View
         //when clicked OK, a new species object is created and the window closes
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
+            //if-statements to check if the input is valid, and if not, show a messagebox to prevent crashing. 
+            if (!int.TryParse(txtNumOfEyes.Text, out int eyesVal) || eyesVal < 0)
+            {
+                MessageBox.Show("Write a valid number of eyes (0>).", "Invalid input", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (species == ArachnidSpecies.Scorpion && (!int.TryParse(txtInputBlock1.Text, out int clawVal) || clawVal < 0))
+            {
+                MessageBox.Show("Write a valid claw length (0>).", "Invalid input", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
             CreateArachnidSpecies();
             DialogResult = true;
             Close();

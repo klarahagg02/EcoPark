@@ -18,7 +18,6 @@ namespace EcoPark.Arachnids
             get { return numOfEyes; } 
             set { numOfEyes = value; }
         }
-
         public bool IsPoisonous
         {
             get { return isPoisonous; }

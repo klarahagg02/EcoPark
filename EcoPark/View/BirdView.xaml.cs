@@ -80,6 +80,25 @@ namespace EcoPark.View
         //when clicked OK, a new species object is created and the window closes
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
+            //if-statements to check if the input is valid, and if not, show a messagebox to prevent crashing. 
+            if (!int.TryParse(txtWingspan.Text, out int wingspanVal) || wingspanVal < 0)
+            {
+                MessageBox.Show("Write a valid wingspan", "Invalid input", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (species == BirdSpecies.Pelican)
+            {
+                if (!double.TryParse(txtInputBlock1.Text, out double beakVal) || beakVal < 0)
+                {
+                    MessageBox.Show("Write a valid beak length", "Invalid input", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+            }
+            if (species == BirdSpecies.Penguin && string.IsNullOrWhiteSpace(txtInputBlock1.Text))
+            {
+                MessageBox.Show("Fill ín habitat", "Habitat missing", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
             CreateBirdSpecies();
             DialogResult = true;
             Close();

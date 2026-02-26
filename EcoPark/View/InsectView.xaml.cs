@@ -82,6 +82,31 @@ namespace EcoPark.View
         //when clicked OK, a new species object is created and the window closes
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtColor.Text))
+            {
+                MessageBox.Show("Fill in the color", "Color missing", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (double.TryParse(txtColor.Text.Trim(), out _))
+            {
+                MessageBox.Show("Write color in text-form, no numbers", "Invalid color", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (species == InsectSpecies.Bee && string.IsNullOrWhiteSpace(txtInputBlock1.Text))
+            {
+                MessageBox.Show("Fill in bee type", "Bee type missing", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (species == InsectSpecies.Bee && double.TryParse(txtInputBlock1.Text.Trim(), out _))
+            {
+                MessageBox.Show("Write bee type in text-form, no numbers", "Invalid bee type", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (species == InsectSpecies.Ladybug && (!int.TryParse(txtInputBlock1.Text, out int dotsVal) || dotsVal < 0))
+            {
+                MessageBox.Show("Write a valid number of dots", "Invalid input", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
             CreateInsectSpecies();
             DialogResult = true;
             Close();
