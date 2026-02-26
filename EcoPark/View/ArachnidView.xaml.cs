@@ -46,22 +46,7 @@ namespace EcoPark.View
             InitializeSpeciesUI();
         }
 
-        //another constructor for ? do i need this?
-        public ArachnidView(Animal animal)
-        {
-            InitializeComponent();
-            InitializeSpeciesUI();
-        }
-
-        //public MammalView()
-        //{
-        //    InitializeComponent();
-        //    InitializeSpeciesUI();
-        //}
-
-        //create a help method that loops through the textboxes and hides them as a starter to minimize duplication of code!
-
-
+        //method that initializes the UI based on the chosen species in main window
         private void InitializeSpeciesUI()
         {
 
@@ -93,6 +78,8 @@ namespace EcoPark.View
             //if isVisible is true, set visibility to Visible, otherwise set it to Collapsed (currently "removed")
             element.Visibility = isVisible ? Visibility.Visible : Visibility.Collapsed;
         }
+
+        //when clicked OK, a new species object is created and the window closes
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
             CreateArachnidSpecies();
@@ -100,6 +87,7 @@ namespace EcoPark.View
             Close();
         }
 
+        //method to create a species object 
         private void CreateArachnidSpecies()
         {
             int numOfEyes = int.Parse(txtNumOfEyes.Text);
@@ -119,9 +107,10 @@ namespace EcoPark.View
             }
         }
 
+        //when clicked Cancel, the animal is set to null and the window closes
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
-            animal = null; // Set the animal to null to indicate cancellation
+            animal = null; // Set the animal to null
             this.Close(); // Close the window
         }
     }

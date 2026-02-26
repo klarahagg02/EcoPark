@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,13 +7,11 @@ using EcoPark;
 
 namespace EcoPark.AnimalsGen
 {
-    //abstract class - cannot be instantiated, only inherited from. this is the parent class
-    public class Animal
+    //the parent class for all animals in the park. 
+    //its abstract because we dont want to be able to create an animal object without specifics (category, species)
+    public abstract class Animal
     {
-        //this class should ONLY have the default constructor
 
-        //instance variables - data that all objects will have IN them.
-        //these are the "attributes" of the animals where the data is stored
         private int id;
         private string name;
         private int age;

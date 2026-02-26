@@ -25,8 +25,8 @@ namespace EcoPark;
 /// </summary>
 public partial class MainWindow : Window
 {
-    //to reach the animals atributes
-    private Animal animal = new Animal();
+    //to reach all attributes in genreal data, category data and species data
+    private Animal? animal = null;
 
     //main constructor
     public MainWindow()

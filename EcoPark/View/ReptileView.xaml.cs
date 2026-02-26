@@ -23,7 +23,6 @@ namespace EcoPark.View
     /// </summary>
     public partial class ReptileView : Window
     {
-
         public Animal Animal
         {
             get { return animal; }
@@ -38,7 +37,6 @@ namespace EcoPark.View
         private Animal? animal = null;
         private ReptileSpecies species = 0;
 
-
         //main constructor
         public ReptileView(int species)
         {
@@ -47,25 +45,9 @@ namespace EcoPark.View
             InitializeSpeciesUI();
         }
 
-        //another constructor for ? do i need this?
-        public ReptileView(Animal animal)
-        {
-            InitializeComponent();
-            InitializeSpeciesUI();
-        }
-
-        //public MammalView()
-        //{
-        //    InitializeComponent();
-        //    InitializeSpeciesUI();
-        //}
-
-        //create a help method that loops through the textboxes and hides them as a starter to minimize duplication of code!
-
-
+        //method that initializes the UI based on the chosen species in main window
         private void InitializeSpeciesUI()
         {
-
             txtSpecificSpecies.Text = $"Specific Data for {species.ToString()}";
 
             //switch case to show txtBoxes based on what species was chosen in mainwindow
@@ -95,6 +77,7 @@ namespace EcoPark.View
             element.Visibility = isVisible ? Visibility.Visible : Visibility.Collapsed;
         }
 
+        //when clicked OK, a new species object is created and the window closes
         private void CreateReptileSpecies()
         {
             int bodyLength = int.Parse(txtBodyLength.Text);
@@ -114,7 +97,6 @@ namespace EcoPark.View
             }
         }
 
-
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
             CreateReptileSpecies();
@@ -122,9 +104,10 @@ namespace EcoPark.View
             Close();
         }
 
+        //when clicked Cancel, the animal is set to null and the window closes
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
-            animal = null; // Set the animal to null to indicate cancellation
+            animal = null; // Set the animal to null
             this.Close(); // Close the window
         }
     }

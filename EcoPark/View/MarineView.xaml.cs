@@ -28,7 +28,6 @@ namespace EcoPark.View
             InitializeComponent();
         }
 
-
         public Animal Animal
         {
             get { return animal; }
@@ -43,7 +42,6 @@ namespace EcoPark.View
         private Animal? animal = null;
         private MarineSpecies species = 0;
 
-
         //main constructor
         public MarineView(int species)
         {
@@ -52,22 +50,7 @@ namespace EcoPark.View
             InitializeSpeciesUI();
         }
 
-        //another constructor for ? do i need this?
-        public MarineView(Animal animal)
-        {
-            InitializeComponent();
-            InitializeSpeciesUI();
-        }
-
-        //public MammalView()
-        //{
-        //    InitializeComponent();
-        //    InitializeSpeciesUI();
-        //}
-
-        //create a help method that loops through the textboxes and hides them as a starter to minimize duplication of code!
-
-
+        //method that initializes the UI based on the chosen species in main window
         private void InitializeSpeciesUI()
         {
 
@@ -100,7 +83,7 @@ namespace EcoPark.View
             element.Visibility = isVisible ? Visibility.Visible : Visibility.Collapsed;
         }
 
-
+        //when clicked OK, a new species object is created and the window closes
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
             CreateMarineSpecies();
@@ -108,6 +91,7 @@ namespace EcoPark.View
             Close();
         }
 
+        //method to create a species object 
         private void CreateMarineSpecies()
         {
             int livingDepth = int.Parse(txtLivingDeph.Text);
@@ -127,12 +111,11 @@ namespace EcoPark.View
             }
         }
 
+        //when clicked Cancel, the animal is set to null and the window closes
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
-            animal = null; // Set the animal to null to indicate cancellation
+            animal = null; // Set the animal to null
             this.Close(); // Close the window
         }
-
-
     }
 }

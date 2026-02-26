@@ -39,7 +39,6 @@ namespace EcoPark.View
         private Animal? animal = null;
         private MammalSpecies species = 0;
 
-
         //main constructor
         public MammalView(int species)
         {
@@ -48,22 +47,7 @@ namespace EcoPark.View
             InitializeSpeciesUI();
         }
 
-        //another constructor for ? do i need this?
-        public MammalView(Animal animal)
-        {
-            InitializeComponent();
-            InitializeSpeciesUI();
-        }
-
-        //public MammalView()
-        //{
-        //    InitializeComponent();
-        //    InitializeSpeciesUI();
-        //}
-
-        //create a help method that loops through the textboxes and hides them as a starter to minimize duplication of code!
-
-
+        //method that initializes the UI based on the chosen species in main window
         private void InitializeSpeciesUI() { 
 
             txtSpecificSpecies.Text = $"Specific Data for {species.ToString()}";
@@ -103,6 +87,7 @@ namespace EcoPark.View
             element.Visibility = isVisible ? Visibility.Visible : Visibility.Collapsed;
         }
 
+        //when clicked OK, a new species object is created and the window closes
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
             CreateMammalSpecies();
@@ -110,11 +95,11 @@ namespace EcoPark.View
             Close(); // Close the window after creating the animal
         }
 
+        //method to create a species object 
         private void CreateMammalSpecies()
         {
             int numOfLegs = int.Parse(txtNumOfLegs.Text);
             int tailLength = int.Parse(txtTailLength.Text);
-            //calling methos in mammalfacotry that returns a "finished" mammal object. 
             animal = MammalFactory.CreateMammal(species, numOfLegs, tailLength);
 
             switch (species)
@@ -135,9 +120,10 @@ namespace EcoPark.View
             }
         }
 
+        //when clicked Cancel, the animal is set to null and the window closes
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
-            animal = null; // Set the animal to null to indicate cancellation
+            animal = null; // Set the animal to null
             this.Close(); // Close the window
         }
     }
