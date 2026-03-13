@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EcoPark.Birds
 {
-    class Bird : Animal
+    abstract class Bird : Animal
     {
         private int wingspan;
         private bool canFly;

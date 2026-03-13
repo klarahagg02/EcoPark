@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EcoPark.Reptiles
 {
-    class Reptile : Animal
+    abstract class Reptile : Animal
     {
         private int bodyLength; //in cm
         private bool livesInWater;

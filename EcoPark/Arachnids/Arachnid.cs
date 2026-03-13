@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EcoPark.Arachnids
 {
-    class Arachnid : Animal
+    abstract class Arachnid : Animal
     {
         private int numOfEyes;
         private bool isPoisonous;

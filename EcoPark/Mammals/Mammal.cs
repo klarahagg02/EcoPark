@@ -8,7 +8,7 @@ using EcoPark;
 
 namespace EcoPark.Mammals
 {
-    class Mammal : Animal
+    abstract class Mammal : Animal
     {
         //instance variables
         private int numOfLegs;

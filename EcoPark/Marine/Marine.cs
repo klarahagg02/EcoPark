@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EcoPark.Marine
 {
-    class Marine : Animal
+    abstract class Marine : Animal
     {
         private int livingDepth; //in meters
         private string color;
