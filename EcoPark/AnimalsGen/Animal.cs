@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EcoPark;
+using EcoParkV2.AnimalsGen;
 
 namespace EcoPark.AnimalsGen
 {
     //the parent class for all animals in the park. 
     //its abstract because we dont want to be able to create an animal object without specifics (category, species)
-    public abstract class Animal
+    public abstract class Animal : IAnimal
     {
 
         private int id;

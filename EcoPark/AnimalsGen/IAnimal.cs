@@ -5,9 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EcoParkV2
+namespace EcoParkV2.AnimalsGen
 {
-    interface IAnimal
+    //this class will define what all subclasses must have
+    public interface IAnimal
     {
         //a sort of contract that all animals must have a name, age and gender
         string Name { get; set; }
@@ -16,7 +17,7 @@ namespace EcoParkV2
 
         //method that returns something (name, id, age etc)
 
-        string ToStringSummary(); //to be used for displaying in listboxes etc.
+        //string ToStringSummary(); //to be used for displaying in listboxes etc.
 
     }
 }
