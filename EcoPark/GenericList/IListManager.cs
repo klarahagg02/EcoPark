@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 //define all behaviors that are a must
 namespace EcoParkV2.GenericList
 {
-    interface IListManager<T>
+    public interface IListManager<T>
     {
         //define contract-stuff here
         
@@ -22,7 +22,7 @@ namespace EcoParkV2.GenericList
         bool Add(T type);
         //change object at a specific index
         bool ChangeAt(T type, int index);
-        //check if valid
+        //check if index is in list
         bool CheckIndex(int index);
         //delete all objects in list
         void DeleteAll();
