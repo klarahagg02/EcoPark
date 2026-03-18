@@ -24,7 +24,7 @@ namespace EcoParkV2.GenericList
         }
 
         //property
-        public List<T> TheList
+        public List<T> ListOfAnimals
         {
             get { return list; }
         }

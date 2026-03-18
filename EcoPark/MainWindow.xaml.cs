@@ -69,12 +69,13 @@ public partial class MainWindow : Window
         animal.Weight = int.Parse(txtWeight.Text);
     }
 
-    //when the button Add is clicked, the program calls rhe read general data method and then updates 
-    //the UI to show the object's data in the output.
+    //when the button Add is clicked, the program calls rhe read-general-data method and then updates 
+    //the UI to show the object's data in the output, including an unique ID through AnimalManager
     private void btnAddGenData_Click(object sender, RoutedEventArgs e)
     {
         ReadGenAnimalData();
 
+        //put this as its own method that is called instead if i have time
         if (animal != null)
         {
             if (string.IsNullOrWhiteSpace(animal.Id))
@@ -86,7 +87,6 @@ public partial class MainWindow : Window
                 animalManager.Add(animal);
             }
         }
-
         UpdateUI();
     }
 
@@ -97,6 +97,20 @@ public partial class MainWindow : Window
             return;
         //print the data from the whole animal (cat, turtle, bee etc) in the output
         txtAnimalOutput.Text = animal.ToString();
+        //calls method to refresh list of all added animals
+        RefreshAnimalList();
+    }
+
+    //refreshes the listbox in the UI to show updated list of all added animals
+    private void RefreshAnimalList()
+    {
+        //begin with clear list and then loop through animals
+        lstListOfAnimals.Items.Clear();
+        foreach (Animal animal in animalManager.ListOfAnimals)
+        {
+            //uses ToStringSummary to show general info about species in listbox
+            lstListOfAnimals.Items.Add(animal.ToStringSummary());
+        }
     }
 
     //when the button Create Animal is clicked, based on selected cetegory+species, a new window opens and
@@ -281,5 +295,10 @@ public partial class MainWindow : Window
     private void ComboBox_GenderSelection(object sender, SelectionChangedEventArgs e)
     {
 
+    }
+
+    private void btnDelete_Click(object sender, RoutedEventArgs e)
+    {
+        //implement code for deleting specific animal in list with help from listmanager
     }
 }
