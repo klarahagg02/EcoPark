@@ -57,5 +57,15 @@ namespace EcoParkV2.AnimalsGen
 
             return Add(animal);
         }
+
+        public bool DeleteAnimal(int index)
+        {
+            if (!CheckIndex(index))
+                return false;
+
+            // Route deletion through the generic list API so both layers are exercised.
+            DeleteAt(index);
+            return true;
+        }
     }
 }

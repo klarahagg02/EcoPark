@@ -78,14 +78,9 @@ public partial class MainWindow : Window
         //put this as its own method that is called instead if i have time
         if (animal != null)
         {
-            if (string.IsNullOrWhiteSpace(animal.Id))
-            {
+            // Always add through AnimalManager so ID + add logic is centralized.
+            if (!animalManager.ListOfAnimals.Contains(animal))
                 animalManager.AddAnimal(animal);
-            }
-            else if (!animalManager.ListOfAnimals.Contains(animal))
-            {
-                animalManager.Add(animal);
-            }
         }
         UpdateUI();
     }
@@ -299,6 +294,11 @@ public partial class MainWindow : Window
 
     private void btnDelete_Click(object sender, RoutedEventArgs e)
     {
-        //implement code for deleting specific animal in list with help from listmanager
+        int index = lstListOfAnimals.SelectedIndex;
+        if (index >= 0 && animalManager.CheckIndex(index))
+        {
+            animalManager.DeleteAnimal(index);
+            RefreshAnimalList();
+        }
     }
 }
