@@ -99,7 +99,6 @@ namespace EcoParkV2.GenericList
             //created the list
             List<string> listOfStrings = new List<string>();
             //loop to convert to string
-            //switch item to type?
             foreach (T item in list)
             {
                 listOfStrings.Add(item is null ? string.Empty : item.ToString());

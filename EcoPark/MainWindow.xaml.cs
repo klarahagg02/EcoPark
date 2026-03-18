@@ -60,11 +60,6 @@ public partial class MainWindow : Window
             MessageBox.Show("Write a valid age (0 or more years)", "Invalid age", MessageBoxButton.OK, MessageBoxImage.Warning);
             return;
         }
-        if (cboSelectGender.SelectedItem == null)
-        {
-            MessageBox.Show("Choose a gender", "Gender missing", MessageBoxButton.OK, MessageBoxImage.Warning);
-            return;
-        }
         if (!int.TryParse(txtWeight.Text, out int weight) || weight <= 0)
         {
             MessageBox.Show("Write a valid weight", "Invalid weight", MessageBoxButton.OK, MessageBoxImage.Warning);
@@ -73,7 +68,7 @@ public partial class MainWindow : Window
 
         currAnimal.Name = txtName.Text;
         currAnimal.Age = int.Parse(txtAge.Text);
-        currAnimal.Gender = (GenderType)Enum.Parse(typeof(GenderType),cboSelectGender.SelectedItem.ToString());
+        currAnimal.Gender = (GenderType)Enum.Parse(typeof(GenderType), cboSelectGender.SelectedItem.ToString());
         currAnimal.Weight = int.Parse(txtWeight.Text);
     }
 
@@ -304,17 +299,21 @@ public partial class MainWindow : Window
     //so that the combobox will work in the UI
     private void ComboBox_GenderSelection(object sender, SelectionChangedEventArgs e)
     {
+        //it automatically selects the first gender to prevent errors
+        lstCategories.SelectedIndex = 0;
     }
 
     //delete a specific animal from the listbox of animals
     private void btnDelete_Click(object sender, RoutedEventArgs e)
     {
         int index = lstListOfAnimals.SelectedIndex;
-        if (index >= 0 && animalManager.CheckIndex(index))
+        //if no animal is selected, return
+        if (index < 0 || !animalManager.CheckIndex(index))
         {
-            animalManager.DeleteAnimal(index);
-            RefreshAnimalList();
+            return;
         }
+        animalManager.DeleteAnimal(index);
+        RefreshAnimalList();
     }
 
     //to provide more information of a specific animal in the list, in the listbox 

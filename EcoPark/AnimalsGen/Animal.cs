@@ -58,7 +58,8 @@ namespace EcoPark.AnimalsGen
         //also aligns the attributes in a structured line.
         public virtual string ToStringSummary()
         {
-            return $"{Id,-8} {Name,-12} {Age,6:f1} {Weight,6:f1} {Gender}";
+            // Fixed padding for a single line summary used in the ListBox.
+            return $"{Id,-10} {Name,-14} {Age,6} {Weight,8} {Gender,-8}";
         }
     }
 }
