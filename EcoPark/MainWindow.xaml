@@ -159,7 +159,7 @@
             Content="Add" />
         <TextBox x:Name="txtAnimalOutput" HorizontalAlignment="Left" Height="198" Margin="332,37,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="132"/>
         <TextBlock HorizontalAlignment="Center" Height="20" Margin="0,17,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" FontWeight="Bold"><Run Language="sv-se" Text="Animal information:"/></TextBlock>
-        <ListBox x:Name="lstListOfAnimals" HorizontalAlignment="Left" Height="95" Margin="332,285,0,0" VerticalAlignment="Top" Width="419" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <ListBox x:Name="lstListOfAnimals" HorizontalAlignment="Left" Height="95" Margin="332,285,0,0" VerticalAlignment="Top" Width="419" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="lstListOfAnimals_SelectionChanged"/>
         <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Height="28" Margin="502,385,0,0" VerticalAlignment="Top" Width="78" Background="#FFE21E1E" Click="btnDelete_Click"/>
         <TextBlock HorizontalAlignment="Left" Height="16" Margin="336,266,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="415"><Run FontWeight="Bold" Text="Species       ID          Name                     Age         Weight         Gender"/></TextBlock>
     </Grid>

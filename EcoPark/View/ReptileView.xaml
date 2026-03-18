@@ -12,7 +12,7 @@
         <Label Content="General Reptile Data" HorizontalAlignment="Left" Height="25" Margin="39,54,0,0" VerticalAlignment="Top" Width="128" RenderTransformOrigin="0.143,0.279" FontWeight="Bold"/>
         <Label Content="Body length" HorizontalAlignment="Left" Height="26" Margin="62,96,0,0" VerticalAlignment="Top" Width="82" RenderTransformOrigin="0.741,0.283"/>
         <Label Content="Lives in water" HorizontalAlignment="Left" Height="29" Margin="62,129,0,0" VerticalAlignment="Top" Width="82"/>
-        <TextBox x:Name="txtBodyLength" HorizontalAlignment="Left" Height="20" Margin="144,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73" RenderTransformOrigin="0.464,1.983"/>
+        <TextBox x:Name="txtBodyLength" HorizontalAlignment="Left" Height="20" Margin="144,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" RenderTransformOrigin="0.464,1.983"/>
         <RadioButton x:Name="radioBtnYes" Content="Yes" HorizontalAlignment="Left" Height="18" Margin="149,135,0,0" VerticalAlignment="Top" Width="43"/>
         <RadioButton x:Name="radioBtnNo" Content="No" HorizontalAlignment="Left" Height="18" Margin="197,135,0,0" VerticalAlignment="Top" Width="43"/>
         <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" Height="33" Margin="84,336,0,0" VerticalAlignment="Top" Width="66" Click="btnOK_Click" Background="#FF56B32D" FontWeight="Bold" IsDefault="True"/>
@@ -22,6 +22,7 @@
         <TextBox x:Name="txtInputBlock1" HorizontalAlignment="Left" Height="20" Margin="140,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85"/>
         <TextBlock x:Name="txtblock2" HorizontalAlignment="Left" Height="18" Margin="60,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80"><Run Text="TextBlock"/><Run Language="sv-se" Text="2"/></TextBlock>
         <CheckBox x:Name="chkInput" Content="Yes" HorizontalAlignment="Left" Height="18" Margin="140,285,0,0" VerticalAlignment="Top" Width="51"/>
+        <TextBlock HorizontalAlignment="Left" Height="13" Margin="214,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"><Run Language="sv-se" Text="cm"/></TextBlock>
 
     </Grid>
 </Window>

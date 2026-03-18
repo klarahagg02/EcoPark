@@ -304,9 +304,9 @@ public partial class MainWindow : Window
     //so that the combobox will work in the UI
     private void ComboBox_GenderSelection(object sender, SelectionChangedEventArgs e)
     {
-
     }
 
+    //delete a specific animal from the listbox of animals
     private void btnDelete_Click(object sender, RoutedEventArgs e)
     {
         int index = lstListOfAnimals.SelectedIndex;
@@ -314,6 +314,25 @@ public partial class MainWindow : Window
         {
             animalManager.DeleteAnimal(index);
             RefreshAnimalList();
+        }
+    }
+
+    //to provide more information of a specific animal in the list, in the listbox 
+    private void lstListOfAnimals_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        int index = lstListOfAnimals.SelectedIndex;
+        if (index < 0)
+        {
+            return;
+        }
+        if (!animalManager.CheckIndex(index))
+        {
+            return;
+        }
+        Animal selectedAnimal = animalManager.GetAt(index);
+        if (selectedAnimal != null)
+        {
+            txtAnimalOutput.Text = selectedAnimal.ToString();
         }
     }
 }
