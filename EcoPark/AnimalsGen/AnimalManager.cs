@@ -8,49 +8,42 @@ using System.Threading.Tasks;
 
 namespace EcoParkV2.AnimalsGen
 {
-    //get animal 
+    //get animal
     class AnimalManager : ListManager<Animal>
     {
         private static int startID = 100;
 
+        //set id based on category using a switch case
         public void SetNewID(Animal animal)
         {
             if (animal == null)
                 return;
-
-            CategoryType category = animal.Category;
             string newID = string.Empty;
 
-            if(category == CategoryType.Mammal)
+            switch (animal.Category)
             {
-                newID = "MAM";
-
+                case CategoryType.Mammal:
+                    newID = "MAM";
+                    break;
+                case CategoryType.Amphibian:
+                    newID = "AM";
+                    break;
+                case CategoryType.Bird:
+                    newID = "B";
+                    break;
+                case CategoryType.Marine:
+                    newID = "MAR";
+                    break;
+                case CategoryType.Insect:
+                    newID = "I";
+                    break;
+                case CategoryType.Reptile:
+                    newID = "R";
+                    break;
+                case CategoryType.Arachnid:
+                    newID = "AR";
+                    break;
             }
-            else if (category == CategoryType.Amphibian)
-            {
-                newID = "AM";
-            }
-            else if (category == CategoryType.Bird)
-            {
-                newID = "B";
-            }
-            else if (category == CategoryType.Marine)
-            {
-                newID = "MAR";
-            }
-            else if (category == CategoryType.Insect)
-            {
-                newID = "I";
-            }
-            else if (category == CategoryType.Reptile)
-            {
-                newID = "R";
-            }
-            else if (category == CategoryType.Arachnid)
-            {
-                newID = "AR";
-            }
-
             animal.Id = newID + startID++.ToString();
         }
 

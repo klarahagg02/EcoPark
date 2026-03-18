@@ -82,7 +82,7 @@ public partial class MainWindow : Window
             {
                 animalManager.AddAnimal(animal);
             }
-            else if (!animalManager.TheList.Contains(animal))
+            else if (!animalManager.ListOfAnimals.Contains(animal))
             {
                 animalManager.Add(animal);
             }
