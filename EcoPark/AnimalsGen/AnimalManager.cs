@@ -67,5 +67,20 @@ namespace EcoParkV2.AnimalsGen
             DeleteAt(index);
             return true;
         }
+
+        //creating an array of all animals summaries
+        public string[] ToStringSummaryAllAnimals()
+        {
+            //new array
+            string[] infoStrings = new string[Count];
+            //loop through array of animals and add the summary of each animal to the new array
+            for (int i = 0; i < Count; i++)
+            {
+                Animal animal = ListOfAnimals[i];
+                //double check if animal exists before using summary
+                infoStrings[i] = animal is null ? string.Empty : animal.ToStringSummary();
+            }
+            return infoStrings;
+        }
     }
 }

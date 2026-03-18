@@ -26,9 +26,11 @@ namespace EcoPark;
 /// </summary>
 public partial class MainWindow : Window
 {
+    //to reach animalmanagers methods and list
     private AnimalManager animalManager = new AnimalManager();
-    //to reach all attributes in genreal data, category data and species data
-    private Animal? animal = null;
+    //to reach attributes in gendata, category data and species data,
+    //works as a temporary work-object
+    private Animal? currAnimal = null;
 
     //main constructor
     public MainWindow()
@@ -41,6 +43,12 @@ public partial class MainWindow : Window
     //to get the data from the general data info
     private void ReadGenAnimalData()
     {
+        //if no animal is created yet, show messagebox
+        if (currAnimal == null)
+        {
+            MessageBox.Show("Create an animal first.", "No animal to save", MessageBoxButton.OK, MessageBoxImage.Information);
+            return;
+        }
         //a lot of if-statements to check if the input is valid, and if not, show a messagebox to prevent crashing. 
         if (string.IsNullOrWhiteSpace(txtName.Text))
         {
@@ -63,10 +71,10 @@ public partial class MainWindow : Window
             return;
         }
 
-        animal.Name = txtName.Text;
-        animal.Age = int.Parse(txtAge.Text);
-        animal.Gender = (GenderType)Enum.Parse(typeof(GenderType),cboSelectGender.SelectedItem.ToString());
-        animal.Weight = int.Parse(txtWeight.Text);
+        currAnimal.Name = txtName.Text;
+        currAnimal.Age = int.Parse(txtAge.Text);
+        currAnimal.Gender = (GenderType)Enum.Parse(typeof(GenderType),cboSelectGender.SelectedItem.ToString());
+        currAnimal.Weight = int.Parse(txtWeight.Text);
     }
 
     //when the button Add is clicked, the program calls rhe read-general-data method and then updates 
@@ -76,11 +84,18 @@ public partial class MainWindow : Window
         ReadGenAnimalData();
 
         //put this as its own method that is called instead if i have time
-        if (animal != null)
+        if (currAnimal != null)
         {
-            // Always add through AnimalManager so ID + add logic is centralized.
-            if (!animalManager.ListOfAnimals.Contains(animal))
-                animalManager.AddAnimal(animal);
+            Animal addedAnimal = currAnimal;
+            // to make sure the add is through AnimalManager
+            if (!animalManager.ListOfAnimals.Contains(currAnimal) && animalManager.AddAnimal(currAnimal))
+            {
+                // Release the work object so it no longer references the stored instance.
+                currAnimal = null;
+                txtAnimalOutput.Text = addedAnimal.ToString();
+                RefreshAnimalList();
+                return;
+            }
         }
         UpdateUI();
     }
@@ -88,10 +103,10 @@ public partial class MainWindow : Window
     //method for updating the output  with all data from the animal object.
     private void UpdateUI()
     {
-        if (animal == null)
+        if (currAnimal == null)
             return;
         //print the data from the whole animal (cat, turtle, bee etc) in the output
-        txtAnimalOutput.Text = animal.ToString();
+        txtAnimalOutput.Text = currAnimal.ToString();
         //calls method to refresh list of all added animals
         RefreshAnimalList();
     }
@@ -101,10 +116,10 @@ public partial class MainWindow : Window
     {
         //begin with clear list and then loop through animals
         lstListOfAnimals.Items.Clear();
-        foreach (Animal animal in animalManager.ListOfAnimals)
+        foreach (string summary in animalManager.ToStringSummaryAllAnimals())
         {
             //uses ToStringSummary to show general info about species in listbox
-            lstListOfAnimals.Items.Add(animal.ToStringSummary());
+            lstListOfAnimals.Items.Add(summary);
         }
     }
 
@@ -121,9 +136,9 @@ public partial class MainWindow : Window
                     if (mammalView.ShowDialog() == true)
                     {
                         // Get the created animal from the MammalView
-                        animal = mammalView.Animal;
-                        if (animal != null)
-                            animal.Category = CategoryType.Mammal;
+                        currAnimal = mammalView.Animal;
+                        if (currAnimal != null)
+                            currAnimal.Category = CategoryType.Mammal;
                     }
                 }
                 break;
@@ -134,9 +149,9 @@ public partial class MainWindow : Window
                     AmphibianView amphibianView = new AmphibianView((int)(AmphibianSpecies)lstSpecies.SelectedItem);
                     if (amphibianView.ShowDialog() == true)
                     {
-                        animal = amphibianView.Animal;
-                        if (animal != null)
-                            animal.Category = CategoryType.Amphibian;
+                        currAnimal = amphibianView.Animal;
+                        if (currAnimal != null)
+                            currAnimal.Category = CategoryType.Amphibian;
                     }
                 }
                 break;
@@ -147,9 +162,9 @@ public partial class MainWindow : Window
                     BirdView birdView = new BirdView((int)(BirdSpecies)lstSpecies.SelectedItem);
                     if (birdView.ShowDialog() == true)
                     {
-                        animal = birdView.Animal;
-                        if (animal != null)
-                            animal.Category = CategoryType.Bird;
+                        currAnimal = birdView.Animal;
+                        if (currAnimal != null)
+                            currAnimal.Category = CategoryType.Bird;
                     }
                 }
                 break;
@@ -160,9 +175,9 @@ public partial class MainWindow : Window
                     MarineView marineView = new MarineView((int)(MarineSpecies)lstSpecies.SelectedItem);
                     if (marineView.ShowDialog() == true)
                     {
-                        animal = marineView.Animal;
-                        if (animal != null)
-                            animal.Category = CategoryType.Marine;
+                        currAnimal = marineView.Animal;
+                        if (currAnimal != null)
+                            currAnimal.Category = CategoryType.Marine;
                     }
                 }
                 break;
@@ -173,9 +188,9 @@ public partial class MainWindow : Window
                     InsectView insectView = new InsectView((int)(InsectSpecies)lstSpecies.SelectedItem);
                     if (insectView.ShowDialog() == true)
                     {
-                        animal = insectView.Animal;
-                        if (animal != null)
-                            animal.Category = CategoryType.Insect;
+                        currAnimal = insectView.Animal;
+                        if (currAnimal != null)
+                            currAnimal.Category = CategoryType.Insect;
                     }
                 }
                 break;
@@ -186,9 +201,9 @@ public partial class MainWindow : Window
                     ReptileView reptileView = new ReptileView((int)(ReptileSpecies)lstSpecies.SelectedItem);
                     if (reptileView.ShowDialog() == true)
                     {
-                        animal = reptileView.Animal;
-                        if (animal != null)
-                            animal.Category = CategoryType.Reptile;
+                        currAnimal = reptileView.Animal;
+                        if (currAnimal != null)
+                            currAnimal.Category = CategoryType.Reptile;
                     }
                 }
                 break;
@@ -199,9 +214,9 @@ public partial class MainWindow : Window
                     ArachnidView arachnidView = new ArachnidView((int)(ArachnidSpecies)lstSpecies.SelectedItem);
                     if (arachnidView.ShowDialog() == true)
                     {
-                        animal = arachnidView.Animal;
-                        if (animal != null)
-                            animal.Category = CategoryType.Arachnid;
+                        currAnimal = arachnidView.Animal;
+                        if (currAnimal != null)
+                            currAnimal.Category = CategoryType.Arachnid;
                     }
                 }
                 break;
