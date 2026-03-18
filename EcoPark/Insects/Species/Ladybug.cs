@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +21,11 @@ namespace EcoPark.Insects.Species
         public override string ToString()
         {
             return $"{base.ToString()}\nNumber of dots = {NumOfDots}";
+        }
+
+        public override string ToStringSummary()
+        {
+            return $"{"Ladybug",-8} {base.ToStringSummary()}";
         }
     }
 }

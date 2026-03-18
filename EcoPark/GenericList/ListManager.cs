@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,14 +34,18 @@ namespace EcoParkV2.GenericList
         //adds to list
         public bool Add(T type)
         {
+            if (type is null)
+                return false;
             list.Add(type);
             return true;
         }
         //changes object at specific index
         public bool ChangeAt(T type, int index)
         {
-            if (CheckIndex(index)) 
-            { 
+            if (type is null)
+                return false;
+            if (CheckIndex(index))
+            {
                 list[index] = type;
                 return true;
             }
@@ -85,7 +89,7 @@ namespace EcoParkV2.GenericList
             //loop to convert to string
             for (int i = 0; i < list.Count; i++)
             {
-                array[i] = list[i].ToString();
+                array[i] = list[i] is null ? string.Empty : list[i].ToString();
             }
             return array;
         }
@@ -96,9 +100,9 @@ namespace EcoParkV2.GenericList
             List<string> listOfStrings = new List<string>();
             //loop to convert to string
             //switch item to type?
-            foreach(T item in list)
+            foreach (T item in list)
             {
-                listOfStrings.Add(item.ToString());
+                listOfStrings.Add(item is null ? string.Empty : item.ToString());
             }
             return listOfStrings;
         }

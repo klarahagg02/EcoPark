@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +22,12 @@ namespace EcoPark.Reptiles.Species
         {
             string isVenomous = IsVenomous ? $"Yes" : "No";
             return $"{base.ToString()}\nVenomous = {isVenomous}";
+        }
+
+        //
+        public override string ToStringSummary()
+        {
+            return $"{"Snake",-8} {base.ToStringSummary()}";
         }
     }
 }

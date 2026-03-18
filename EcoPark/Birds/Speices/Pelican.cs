@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +21,11 @@ namespace EcoPark.Birds.Speices
         public override string ToString()
         {
             return $"{base.ToString()}\nBeak length = {BeakLength}";
+        }
+
+        public override string ToStringSummary()
+        {
+            return $"{"Pelican",-8} {base.ToStringSummary()}";
         }
     }
 }

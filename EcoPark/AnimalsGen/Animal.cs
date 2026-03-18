@@ -13,16 +13,17 @@ namespace EcoPark.AnimalsGen
     public abstract class Animal : IAnimal
     {
 
-        private int id;
+        private string id;
         private string name;
         private int age;
         private GenderType gender;
         private int weight;
 
         //properties to get/set the instance variables. to get access
-        public int Id
+        public string Id
         {
             get { return id; }
+            set { id = value; }
         }
         public string Name
         {
@@ -45,10 +46,19 @@ namespace EcoPark.AnimalsGen
             set { weight = value; }
         }
 
+        public CategoryType Category { get; internal set; }
+
         //to represent the objects in text-form in the output
         public override string ToString()
         {
-            return $"Name = {Name}\nAge = {Age}\nWeight = {Weight}g\nGender = {Gender}\n";
+            return $"ID = {Id}\nName = {Name}\nAge = {Age}\nWeight = {Weight}g\nGender = {Gender}\n";
+        }
+
+        // Selected fields, used for displaying in the GUI. Virtual so species can override.
+        //also aligns the attributes in a structured line.
+        public virtual string ToStringSummary()
+        {
+            return $"{Id,-8} {Name,-12} {Age,6:f1} {Weight,6:f1} {Gender}";
         }
     }
 }

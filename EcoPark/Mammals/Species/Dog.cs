@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +21,11 @@ namespace EcoPark.Mammals.Species
         public override string ToString()
         {
             return $"{base.ToString()}\nBreed = {Breed}";
+        }
+
+        public override string ToStringSummary()
+        {
+            return $"{"Dog",-8} {base.ToStringSummary()}";
         }
     }
 }

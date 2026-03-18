@@ -17,6 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using EcoParkV2.AnimalsGen;
 
 namespace EcoPark;
 
@@ -25,6 +26,7 @@ namespace EcoPark;
 /// </summary>
 public partial class MainWindow : Window
 {
+    private AnimalManager animalManager = new AnimalManager();
     //to reach all attributes in genreal data, category data and species data
     private Animal? animal = null;
 
@@ -72,6 +74,19 @@ public partial class MainWindow : Window
     private void btnAddGenData_Click(object sender, RoutedEventArgs e)
     {
         ReadGenAnimalData();
+
+        if (animal != null)
+        {
+            if (string.IsNullOrWhiteSpace(animal.Id))
+            {
+                animalManager.AddAnimal(animal);
+            }
+            else if (!animalManager.TheList.Contains(animal))
+            {
+                animalManager.Add(animal);
+            }
+        }
+
         UpdateUI();
     }
 
@@ -98,6 +113,8 @@ public partial class MainWindow : Window
                     {
                         // Get the created animal from the MammalView
                         animal = mammalView.Animal;
+                        if (animal != null)
+                            animal.Category = CategoryType.Mammal;
                     }
                 }
                 break;
@@ -109,6 +126,8 @@ public partial class MainWindow : Window
                     if (amphibianView.ShowDialog() == true)
                     {
                         animal = amphibianView.Animal;
+                        if (animal != null)
+                            animal.Category = CategoryType.Amphibian;
                     }
                 }
                 break;
@@ -120,6 +139,8 @@ public partial class MainWindow : Window
                     if (birdView.ShowDialog() == true)
                     {
                         animal = birdView.Animal;
+                        if (animal != null)
+                            animal.Category = CategoryType.Bird;
                     }
                 }
                 break;
@@ -131,6 +152,8 @@ public partial class MainWindow : Window
                     if (marineView.ShowDialog() == true)
                     {
                         animal = marineView.Animal;
+                        if (animal != null)
+                            animal.Category = CategoryType.Marine;
                     }
                 }
                 break;
@@ -142,6 +165,8 @@ public partial class MainWindow : Window
                     if (insectView.ShowDialog() == true)
                     {
                         animal = insectView.Animal;
+                        if (animal != null)
+                            animal.Category = CategoryType.Insect;
                     }
                 }
                 break;
@@ -153,6 +178,8 @@ public partial class MainWindow : Window
                     if (reptileView.ShowDialog() == true)
                     {
                         animal = reptileView.Animal;
+                        if (animal != null)
+                            animal.Category = CategoryType.Reptile;
                     }
                 }
                 break;
@@ -164,6 +191,8 @@ public partial class MainWindow : Window
                     if (arachnidView.ShowDialog() == true)
                     {
                         animal = arachnidView.Animal;
+                        if (animal != null)
+                            animal.Category = CategoryType.Arachnid;
                     }
                 }
                 break;

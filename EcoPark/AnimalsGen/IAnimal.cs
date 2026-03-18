@@ -17,7 +17,7 @@ namespace EcoParkV2.AnimalsGen
 
         //method that returns something (name, id, age etc)
 
-        //string ToStringSummary(); //to be used for displaying in listboxes etc.
+        public string ToStringSummary(); //to be used for displaying in listboxes etc.
 
     }
 }

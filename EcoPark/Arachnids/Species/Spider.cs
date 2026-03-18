@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +22,11 @@ namespace EcoPark.Arachnids.Species
         {
             string produceWeb = ProduceWeb ? $"Yes" : "No";
             return $"{base.ToString()}\nProduce web = {produceWeb}";
+        }
+
+        public override string ToStringSummary()
+        {
+            return $"{"Spider",-8} {base.ToStringSummary()}";
         }
     }
 }

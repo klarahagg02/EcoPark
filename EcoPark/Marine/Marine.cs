@@ -1,4 +1,4 @@
-﻿using EcoPark.AnimalsGen;
+using EcoPark.AnimalsGen;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -24,5 +24,10 @@ namespace EcoPark.Mammals.Species
             string allergyFriendly = AllergyFriendly ? $"Yes" : "No";
             return $"{base.ToString()}\nAllergy friendly = {allergyFriendly}";
         }
+
+        public override string ToStringSummary()
+        {
+            return $"{"Cat",-8} {base.ToStringSummary()}";
+        }
     }
 }

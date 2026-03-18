@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +22,11 @@ namespace EcoPark.Amphibians.Species
         {
             string regrowLimbs = RegrowLimbs ? $"Yes" : "No";
             return $"{base.ToString()}\nCan regrow limbs = {regrowLimbs}";
+        }
+
+        public override string ToStringSummary()
+        {
+            return $"{"Axolotl",-8} {base.ToStringSummary()}";
         }
     }
 }

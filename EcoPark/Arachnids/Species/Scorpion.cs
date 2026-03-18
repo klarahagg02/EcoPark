@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,5 +23,9 @@ namespace EcoPark.Arachnids.Species
             return $"{base.ToString()}\nClaw size = {ClawLength} cm";
         }
 
+        public override string ToStringSummary()
+        {
+            return $"{"Scorpion",-8} {base.ToStringSummary()}";
+        }
     }
 }

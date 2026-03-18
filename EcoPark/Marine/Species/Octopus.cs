@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +22,11 @@ namespace EcoPark.Marine.Species
         {
             string squirtsInk = SquirtsInk ? $"Yes" : "No";
             return $"{base.ToString()}\nSquirts ink = {squirtsInk}";
+        }
+
+        public override string ToStringSummary()
+        {
+            return $"{"Octopus",-8} {base.ToStringSummary()}";
         }
     }
 }

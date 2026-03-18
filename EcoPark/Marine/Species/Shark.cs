@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +22,11 @@ namespace EcoPark.Marine.Species
         {
             string carnivore = Carnivore ? $"Yes" : "No";
             return $"{base.ToString()}\nCarnivore = {carnivore}";
+        }
+
+        public override string ToStringSummary()
+        {
+            return $"{"Shark",-8} {base.ToStringSummary()}";
         }
     }
 }

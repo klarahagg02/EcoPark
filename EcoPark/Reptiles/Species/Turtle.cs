@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +21,11 @@ namespace EcoPark.Reptiles.Species
         public override string ToString()
         {
             return $"{base.ToString()}\nShell color = {ShellColor}";
+        }
+
+        public override string ToStringSummary()
+        {
+            return $"{"Turtle",-8} {base.ToStringSummary()}";
         }
     }
 }
