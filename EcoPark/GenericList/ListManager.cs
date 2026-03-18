@@ -5,8 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 //can manage a list of any type (in this project - Animal),
-//BankAccount, Employee, or even primitive types such as
-//int, double, or bool—without requiring code changes.
+//without requiring code changes.
 namespace EcoParkV2.GenericList
 {
     //provides all behaviors which are defined in the interface
@@ -28,7 +27,7 @@ namespace EcoParkV2.GenericList
         {
             get { return list; }
         }
-        //double check!
+
         public int Count {  get { return list.Count; } }
 
         //adds to list
@@ -61,8 +60,8 @@ namespace EcoParkV2.GenericList
         public void DeleteAll()
         {
             list.Clear();
-            //list.Count = 0;
         }
+
         //deletes object at specific index, if index is valix
         public void DeleteAt(int index)
         {
@@ -78,7 +77,6 @@ namespace EcoParkV2.GenericList
             {
                 return list[index];
             }
-            //maybe add (T) at the end
             return default;
         }
         //returns all objects in array as text
@@ -105,6 +103,5 @@ namespace EcoParkV2.GenericList
             }
             return listOfStrings;
         }
-
     }
 }

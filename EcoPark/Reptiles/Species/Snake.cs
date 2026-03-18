@@ -24,7 +24,7 @@ namespace EcoPark.Reptiles.Species
             return $"{base.ToString()}\nVenomous = {isVenomous}";
         }
 
-        //
+        //override ToStringSummary() method to output the object in the listbox, adds on from the baseclass
         public override string ToStringSummary()
         {
             return $"{"Snake",-8} {base.ToStringSummary()}";

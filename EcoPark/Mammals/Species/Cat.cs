@@ -25,6 +25,7 @@ namespace EcoPark.Mammals.Species
             return $"{base.ToString()}\nAllergy friendly = {allergyFriendly}";
         }
 
+        //override ToStringSummary() method to output the object in the listbox, adds on from the baseclass
         public override string ToStringSummary()
         {
             return $"{"Cat",-8} {base.ToStringSummary()}";

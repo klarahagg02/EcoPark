@@ -12,7 +12,6 @@ namespace EcoPark.AnimalsGen
     //its abstract because we dont want to be able to create an animal object without specifics (category, species)
     public abstract class Animal : IAnimal
     {
-
         private string id;
         private string name;
         private int age;
@@ -54,8 +53,9 @@ namespace EcoPark.AnimalsGen
             return $"ID = {Id}\nName = {Name}\nAge = {Age}\nWeight = {Weight}g\nGender = {Gender}\n";
         }
 
-        // Selected fields, used for displaying in the GUI. Virtual so species can override.
-        //also aligns the attributes in a structured line.
+        //used for output in the UI (MainWindow). Virtual so species classes can override
+        //(I chose fontfamily Consolas in the UI output because all characters have the same width)
+        //source on where I found the info:https://learn.microsoft.com/en-us/typography/font-list/consolas 
         public virtual string ToStringSummary()
         {
             // Fixed padding for a single line summary used in the ListBox.

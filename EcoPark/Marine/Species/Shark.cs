@@ -24,6 +24,7 @@ namespace EcoPark.Marine.Species
             return $"{base.ToString()}\nCarnivore = {carnivore}";
         }
 
+        //override ToStringSummary() method to output the object in the listbox, adds on from the baseclass
         public override string ToStringSummary()
         {
             return $"{"Shark",-8} {base.ToStringSummary()}";

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EcoParkV2.AnimalsGen
 {
-    //get animal
+    //class for managing animal objects
     class AnimalManager : ListManager<Animal>
     {
         private static int startID = 100;
@@ -47,6 +47,7 @@ namespace EcoParkV2.AnimalsGen
             animal.Id = newID + startID++.ToString();
         }
 
+        //add an animal to list
         public bool AddAnimal(Animal animal)
         {
             if (animal == null)
@@ -58,12 +59,13 @@ namespace EcoParkV2.AnimalsGen
             return Add(animal);
         }
 
+        //delete animal from list at specific index
         public bool DeleteAnimal(int index)
         {
             if (!CheckIndex(index))
+            {
                 return false;
-
-            // Route deletion through the generic list API so both layers are exercised.
+            }
             DeleteAt(index);
             return true;
         }

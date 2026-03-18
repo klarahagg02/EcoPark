@@ -24,6 +24,7 @@ namespace EcoPark.Amphibians.Species
             return $"{base.ToString()}\nCan regrow limbs = {regrowLimbs}";
         }
 
+        //override ToStringSummary() method to output the object in the listbox, adds on from the baseclass
         public override string ToStringSummary()
         {
             return $"{"Axolotl",-8} {base.ToStringSummary()}";

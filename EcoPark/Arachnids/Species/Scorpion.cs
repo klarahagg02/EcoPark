@@ -23,6 +23,7 @@ namespace EcoPark.Arachnids.Species
             return $"{base.ToString()}\nClaw size = {ClawLength} cm";
         }
 
+        //override ToStringSummary() method to output the object in the listbox, adds on from the baseclass
         public override string ToStringSummary()
         {
             return $"{"Scorpion",-8} {base.ToStringSummary()}";

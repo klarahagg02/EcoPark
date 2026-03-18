@@ -5,18 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 
 //can manage a list of any type (in this project - Animal),
-//BankAccount, Employee, or even primitive types such as
-//int, double, or bool—without requiring code changes.
+//without requiring code changes.
 
 //define all behaviors that are a must
 namespace EcoParkV2.GenericList
 {
     public interface IListManager<T>
     {
-        //define contract-stuff here
-        
         //property, how many are in the list
         int Count { get; }
+
         //methods
         //add to list
         bool Add(T type);

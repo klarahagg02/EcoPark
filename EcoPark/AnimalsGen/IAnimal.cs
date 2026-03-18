@@ -1,4 +1,4 @@
-﻿using EcoPark.AnimalsGen;
+using EcoPark.AnimalsGen;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,17 +7,14 @@ using System.Threading.Tasks;
 
 namespace EcoParkV2.AnimalsGen
 {
-    //this class will define what all subclasses must have
+    //this class defines what its subclass must have
     public interface IAnimal
     {
-        //a sort of contract that all animals must have a name, age and gender
+        //a "contract": all animals must have a name, age and gender
         string Name { get; set; }
         int Age { get; set; }
         GenderType Gender { get; set; }
 
-        //method that returns something (name, id, age etc)
-
-        public string ToStringSummary(); //to be used for displaying in listboxes etc.
-
+        string ToStringSummary(); //used for print out animal objects in the listbox
     }
 }

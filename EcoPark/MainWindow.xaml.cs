@@ -65,7 +65,6 @@ public partial class MainWindow : Window
             MessageBox.Show("Write a valid weight", "Invalid weight", MessageBoxButton.OK, MessageBoxImage.Warning);
             return;
         }
-
         currAnimal.Name = txtName.Text;
         currAnimal.Age = int.Parse(txtAge.Text);
         currAnimal.Gender = (GenderType)Enum.Parse(typeof(GenderType), cboSelectGender.SelectedItem.ToString());
@@ -78,14 +77,13 @@ public partial class MainWindow : Window
     {
         ReadGenAnimalData();
 
-        //put this as its own method that is called instead if i have time
         if (currAnimal != null)
         {
             Animal addedAnimal = currAnimal;
-            // to make sure the add is through AnimalManager
+            //to make sure the add is through AnimalManager
             if (!animalManager.ListOfAnimals.Contains(currAnimal) && animalManager.AddAnimal(currAnimal))
             {
-                // Release the work object so it no longer references the stored instance.
+                //release the work object
                 currAnimal = null;
                 txtAnimalOutput.Text = addedAnimal.ToString();
                 RefreshAnimalList();
@@ -255,7 +253,7 @@ public partial class MainWindow : Window
     {
         if (lstCategories.SelectedItem is CategoryType selectedCategory)
         {
-            //do a switch case for each category and fill the species list
+            //a switch case for each category and fill the species list
             //with the correct species for the chosen category
             switch (selectedCategory)
             {
@@ -303,7 +301,7 @@ public partial class MainWindow : Window
         lstCategories.SelectedIndex = 0;
     }
 
-    //delete a specific animal from the listbox of animals
+    //delete a specific animal from the listbox of added animals
     private void btnDelete_Click(object sender, RoutedEventArgs e)
     {
         int index = lstListOfAnimals.SelectedIndex;
@@ -315,8 +313,8 @@ public partial class MainWindow : Window
         animalManager.DeleteAnimal(index);
         RefreshAnimalList();
     }
-
-    //to provide more information of a specific animal in the list, in the listbox 
+    
+    //to gett all information of a specific animal from the list again in the textbox 
     private void lstListOfAnimals_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
         int index = lstListOfAnimals.SelectedIndex;

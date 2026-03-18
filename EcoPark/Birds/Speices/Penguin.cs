@@ -23,6 +23,7 @@ namespace EcoPark.Birds.Speices
             return $"{base.ToString()}\nHabitat = {Habitat}";
         }
 
+        //override ToStringSummary() method to output the object in the listbox, adds on from the baseclass
         public override string ToStringSummary()
         {
             return $"{"Penguin",-8} {base.ToStringSummary()}";

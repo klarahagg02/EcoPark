@@ -23,6 +23,7 @@ namespace EcoPark.Insects.Species
             return $"{base.ToString()}\nType of bee = {TypeOfBee}";
         }
 
+        //override ToStringSummary() method to output the object in the listbox, adds on from the baseclass
         public override string ToStringSummary()
         {
             return $"{"Bee",-8} {base.ToStringSummary()}";
